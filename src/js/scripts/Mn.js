@@ -12,11 +12,11 @@ export default class Mn {
   }
 
   getMn() {
-    this.mn = this.act.createElem("main", { class: "mn", id: "mn" });
-    const mnRw = this.act.createElem("div", { class: "rw mn-rw" });
-    this.mnHdng = this.act.createElem("h2", { class: "hdng mn-stl mn-hdng" }, "Train & Play:");
-    this.mnMdTxt = this.act.createElem( "span", { class: "hdng mn-stl mn-md-txt" }, "Train");
-    this.mnContBx = this.act.createElem("div", { class: "mn-cont-bx" });
+    this.mn = this.act.createElem('main', { class: 'mn', id: 'mn' });
+    const mnRw = this.act.createElem('div', { class: 'rw mn-rw' });
+    this.mnHdng = this.act.createElem('h2', { class: 'hdng mn-stl mn-hdng' }, 'Train & Play:');
+    this.mnMdTxt = this.act.createElem('span', { class: 'hdng mn-stl mn-md-txt' }, 'Train');
+    this.mnContBx = this.act.createElem('div', { class: 'mn-cont-bx' });
     this.mnCont = this.mnPg.getMnPg();
     this.act.appEl(this.mnHdng, this.mnMdTxt);
     this.act.appEl(this.mnContBx, this.mnCont);
@@ -53,8 +53,6 @@ export default class Mn {
   };
 
   mnControl() {
-
     document.addEventListener('click', this.mnContLstnr1);
-
   }
 }

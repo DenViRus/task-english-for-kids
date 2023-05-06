@@ -50,7 +50,6 @@ export default class MnPg {
       this.mnPgHdng.classList.remove('mnPg-hdng-gmMd');
       this.mnPgCrdsArr.forEach((el) => el.querySelector('.mnPgCrd-cont-bx').classList.remove('mnPgCrd-cont-bx-gmMd'));
     }
-
   }
 
   mnPgControl() {

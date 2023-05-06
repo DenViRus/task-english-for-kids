@@ -109,6 +109,10 @@
   font-family: var(--mnFml);
 }
 
+.gm-stl {
+  font-family: var(--gmFml);
+}
+
 /* .header,
 .main,
 .footer {
