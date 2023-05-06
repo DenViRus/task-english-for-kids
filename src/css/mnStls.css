@@ -1,0 +1,10 @@
+@import "./dflt-stls/dflt.css";
+@import "./styles/stls.css";
+@import "./styles/hdr.css";
+@import './styles/brg.css';
+@import './styles/nv.css';
+@import './styles/md.css';
+@import "./styles/mn.css";
+@import "./styles/ftr.css";
+@import "./styles/mnPg.css";
+@import "./styles/gm.css";

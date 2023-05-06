@@ -1,0 +1,111 @@
+.brg {
+  position: absolute;
+  left: 3rem;
+  top: 1rem;
+  cursor: pointer;
+  z-index: 999;
+
+  transition: transform var(--trnsTmX3) linear, left var(--trnsTmX3) linear;
+}
+
+.brg.brg-actv {
+  transform: rotate(360deg);
+  left: 23rem;
+}
+
+.brg-bx {
+width: var(--brgBxWdth);
+height: var(--brgBxHght);
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+}
+
+.brg-itm,
+.brg-itm::before,
+.brg-itm::after {
+width: 100%;
+height: 20%;
+background-color: var(--clSeGrn);
+box-shadow: 0.1rem 0.1rem 0.1rem var(--clBl);
+border-radius: 2rem;
+
+transition: background-color var(--trnsTmX3) linear;
+}
+
+.brg-itm::before,
+.brg-itm::after {
+  content: "";
+  display: block;
+  position: absolute;
+
+  transition: transform var(--trnsTmX3) ease-in,
+  top var(--trnsTmX3) linear var(--trnsTmX3),
+  bottom var(--trnsTmX3) linear var(--trnsTmX3),
+  background-color var(--trnsTmX3) linear;
+}
+
+.brg-itm::before {
+  top: 0;
+}
+
+.brg-itm::after {
+  bottom: 0;
+}
+
+.brg-itm.brg-itm-actv,
+.brg-itm.brg-itm-actv.brg-itm.brg-itm-gmMd {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.brg-itm.brg-itm-actv::before,
+.brg-itm.brg-itm-actv::after {
+  transition: top var(--trnsTmX3) linear,
+  bottom var(--trnsTmX3) linear,
+  transform var(--trnsTmX3) ease-in var(--trnsTmX3),
+  background-color var(--trnsTmX3) linear;
+}
+
+.brg-itm.brg-itm-actv::before {
+  top: 1.8rem;
+  transform: rotate(45deg);
+}
+
+.brg-itm.brg-itm-actv::after {
+  bottom: 1.8rem;
+  transform: rotate(-45deg);
+}
+
+.brg-itm.brg-itm-gmMd,
+.brg-itm.brg-itm-gmMd::before,
+.brg-itm.brg-itm-gmMd::after {
+  background-color: var(--clTmt);
+}
+
+.brg:hover {
+  scale: 103%;
+}
+
+.brg:active {
+  scale: 100%;
+}
+
+.brg:hover .brg-itm,
+.brg:hover .brg-itm::before,
+.brg:hover .brg-itm::after {
+  background-color: var(--clGrn);
+  box-shadow: 0.1rem 0.1rem 0.2rem var(--clBl);
+}
+.brg:hover .brg-itm.brg-itm-gmMd,
+.brg:hover .brg-itm.brg-itm-gmMd::before,
+.brg:hover .brg-itm.brg-itm-gmMd::after {
+  background-color: var(--clRd);
+}
+
+.brg:hover .brg-itm.brg-itm-actv,
+.brg:hover .brg-itm.brg-itm-actv.brg-itm-gmMd {
+  background-color: transparent;
+  box-shadow: none;
+}

@@ -1,0 +1,506 @@
+[
+  {
+    "id": "actionSetA",
+    "name": "Action (set A)",
+    "image": "...",
+    "data": [
+      {
+        "id": "actionSetACry",
+        "word": "cry",
+        "translation": "плакать",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "actionSetADance",
+        "word": "dance",
+        "translation": "танцевать",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "actionSetADive",
+        "word": "dive",
+        "translation": "нырять",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "actionSetADraw",
+        "word": "draw",
+        "translation": "рисовать",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "actionSetAFish",
+        "word": "fish",
+        "translation": "ловить рыбу",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "actionSetAFly",
+        "word": "fly",
+        "translation": "летать",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "actionSetAHug",
+        "word": "hug",
+        "translation": "обнимать",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "actionSetAJump",
+        "word": "jump",
+        "translation": "прыгать",
+        "image": "...",
+        "audio": "..."
+      }
+    ]
+  },
+  {
+    "id": "actionSetB",
+    "name": "Action (set B)",
+    "image": "...",
+    "data": [
+      {
+        "id": "actionSetBOpen",
+        "word": "open",
+        "translation": "открывать",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "actionSetBPlay",
+        "word": "play",
+        "translation": "играть",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "actionSetBPoint",
+        "word": "point",
+        "translation": "указывать",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "actionSetBRide",
+        "word": "ride",
+        "translation": "ездить",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "actionSetBRun",
+        "word": "run",
+        "translation": "бегать",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "actionSetBSing",
+        "word": "sing",
+        "translation": "петь",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "actionSetBSKip",
+        "word": "skip",
+        "translation": "пропускать, прыгать",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "actionSetBSwim",
+        "word": "swim",
+        "translation": "плавать",
+        "image": "...",
+        "audio": "..."
+      }
+    ]
+  },
+  {
+    "id": "animalSetA",
+    "name": "Animal (set A)",
+    "image": "...",
+    "data": [
+      {
+        "id": "animalSetACat",
+        "word": "cat",
+        "translation": "кот",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "animalSetAChick",
+        "word": "chick",
+        "translation": "цыплёнок",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "animalSetAChicken",
+        "word": "chicken",
+        "translation": "курица",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "animalSetADog",
+        "word": "dog",
+        "translation": "собака",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "animalSetAHorse",
+        "word": "horse",
+        "translation": "лошадь",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "animalSetAPig",
+        "word": "pig",
+        "translation": "свинья",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "animalSetARabbit",
+        "word": "rabbit",
+        "translation": "кролик",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "animalSetASheep",
+        "word": "sheep",
+        "translation": "овца",
+        "image": "...",
+        "audio": "..."
+      }
+    ]
+  },
+  {
+    "id": "animalSetB",
+    "name": "Animal (set B)",
+    "image": "...",
+    "data": [
+      {
+        "id": "animalSetBBird",
+        "word": "bird",
+        "translation": "птица",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "animalSetBFish",
+        "word": "fish",
+        "translation": "рыба",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "animalSetBFrog",
+        "word": "frog",
+        "translation": "жаба",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "animalSetBGiraffe",
+        "word": "giraffe",
+        "translation": "жирафа",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "animalSetBLion",
+        "word": "lion",
+        "translation": "лев",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "animalSetBMouse",
+        "word": "mouse",
+        "translation": "мышь",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "animalSetBTurtle",
+        "word": "turtle",
+        "translation": "черепаха",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "animalSetBDolphin",
+        "word": "dolphin",
+        "translation": "дельфин",
+        "image": "...",
+        "audio": "..."
+      }
+    ]
+  },
+  {
+    "id": "clothesSetA",
+    "name": "Clothes (set A)",
+    "image": "...",
+    "data": [
+      {
+        "id": "clothesSetASkirt",
+        "word": "skirt",
+        "translation": "юбка",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "clothesSetAPants",
+        "word": "pants",
+        "translation": "брюки",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "clothesSetABlouse",
+        "word": "blouse",
+        "translation": "блузка",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "clothesSetADress",
+        "word": "dress",
+        "translation": "платье",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "clothesSetABoot",
+        "word": "boot",
+        "translation": "ботинок",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "clothesSetAShirt",
+        "word": "shirt",
+        "translation": "рубашка",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "clothesSetACoat",
+        "word": "coat",
+        "translation": "пальто",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "clothesSetAShoe",
+        "word": "shoe",
+        "translation": "туфли",
+        "image": "...",
+        "audio": "..."
+      }
+    ]
+  },
+  {
+    "id": "clothesSetB",
+    "name": "Clothes (set B)",
+    "image": "...",
+    "data": [
+      {
+        "id": "clothesSetBHat",
+        "word": "hat",
+        "translation": "шляпа",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "clothesSetBJacket",
+        "word": "jacket",
+        "translation": "куртка",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "clothesSetBGloves",
+        "word": "gloves",
+        "translation": "перчатки",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "clothesSetBSweater",
+        "word": "sweater",
+        "translation": "свитер",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "clothesSetBSneakers",
+        "word": "sneakers",
+        "translation": "кроссовки",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "clothesSetBCap",
+        "word": "cap",
+        "translation": "кепка",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "clothesSetBTshirt",
+        "word": "t-shirt",
+        "translation": "футболка",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "clothesSetBShorts",
+        "word": "shorts",
+        "translation": "шорты",
+        "image": "...",
+        "audio": "..."
+      }
+    ]
+  },
+  {
+    "id": "emotionsSetA",
+    "name": "Emotions (set A)",
+    "image": "...",
+    "data": [
+      {
+        "id": "emotionsSetASad",
+        "word": "sad",
+        "translation": "грустный",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "emotionsSetAAngry",
+        "word": "angry",
+        "translation": "сердитый",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "emotionsSetAHappy",
+        "word": "happy",
+        "translation": "счастливый",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "emotionsSetATired",
+        "word": "tired",
+        "translation": "уставший",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "emotionsSetASurprised",
+        "word": "surprised",
+        "translation": "удивлённый",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "emotionsSetAScared",
+        "word": "scared",
+        "translation": "испуганный",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "emotionsSetASmile",
+        "word": "smile",
+        "translation": "улыбка",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "emotionsSetALaugh",
+        "word": "laugh",
+        "translation": "смех",
+        "image": "...",
+        "audio": "..."
+      }
+    ]
+  },
+  {
+    "id": "emotionsSetB",
+    "name": "Emotions (set B)",
+    "image": "...",
+    "data": [
+      {
+        "id": "emotionsSetBRage",
+        "word": "rage",
+        "translation": "ярость",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "emotionsSetBDisgust",
+        "word": "disgust",
+        "translation": "отвращение",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "emotionsSetBContempt",
+        "word": "contempt",
+        "translation": "презрение",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "emotionsSetBGuilt",
+        "word": "guilt",
+        "translation": "вина",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "emotionsSetBLove",
+        "word": "love",
+        "translation": "любовь",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "emotionsSetBEnvy",
+        "word": "envy",
+        "translation": "зависть",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "emotionsSetBPride",
+        "word": "pride",
+        "translation": "гордость",
+        "image": "...",
+        "audio": "..."
+      },
+      {
+        "id": "emotionsSetBGratitude",
+        "word": "gratitude",
+        "translation": "благодарность",
+        "image": "...",
+        "audio": "..."
+      }
+    ]
+  }
+]

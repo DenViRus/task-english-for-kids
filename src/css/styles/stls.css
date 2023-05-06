@@ -1,0 +1,149 @@
+
+:root {
+  --mnFml: 'IBMPlexSans', sans-serif;
+  --gmFml: 'IBMPlexSerif', serif;
+  --stFml: 'IBMPlexMono', monospace;
+
+  --clBlck: rgb(0, 0, 0);
+  --clNvBlk: rgb(0, 0, 0, .7);
+  --clWht: rgb(255, 255, 255);
+  --clGry: rgb(128, 128, 128);
+  --clLghtGry: rgb(211, 211, 211);
+  --clGld: rgb(255, 215, 0);
+  --clYlw: rgb(255, 255, 0);
+  --clYlwGrn: rgb(173, 255, 47);
+  --clSlvr: rgb(192, 192, 192);
+  --clBl: rgb(0, 0, 255);
+  --clTrqs: rgb(64, 224, 208);
+  --clSkBl: rgb(135, 206, 235);
+  --clLghtBl: rgb(173, 216, 230);
+  --clGrn: rgb(0, 128, 0);
+  --clSeGrn: rgb(46, 139, 87);
+  --clLme: rgb(0, 255, 0);
+  --clLghtGrn: rgb(144, 238, 144);
+  --clRd: rgb(255, 0, 0);
+  --clTmt: rgb(255, 99, 71);
+  --clOrng: rgb(255, 165, 0);
+  --clVlt: rgb(238, 130, 238);
+
+  --rwWdth: 130rem;
+
+  /* header */
+  --hdrHdngFZ: 4rem;
+
+ /* burger */
+  --brgBxWdth: 5.5rem;
+  --brgBxHght: 4.5rem;
+
+  --trnsTm: .1s;
+  --trnsTmX2: .2s;
+  --trnsTmX3: .3s;
+
+  /* nav */
+  --nvWdth: 30rem;
+  --nvLstHght: 60%;
+  --nvLstItmHght: 8%;
+  --nvLstItmTxtFZ: 3rem;
+  --nvLstItmTxtFZHv: 3.1rem;
+
+  /* mode */
+  --mdBxWdth: 15rem;
+  --mdBxHght: 3.5rem;
+
+  --mdTglWdth: 3.5rem;
+  --mdTglHght: 3.5rem;
+
+  --mdTxtFZ: 3rem;
+
+
+  /* main */
+  --mnHdngFZ: 3.5rem;
+  --mnPgHdngFZ: 3rem;
+
+  --mnPgCrdWdth: 23%;
+  --mnPgCrdHght: 45%;
+
+  --mnPgCrdFZ: 2.5rem;
+
+  /* footer */
+  --ftrCtctBxWdth: 85%;
+  --ftrCtctLnkFZ: 2rem;
+  --ftrCtctLnkBfrWdth: 3rem;
+  --ftrCtctLnkBfrHght: 3rem;
+
+  --ftrUpsBxWdth: 10%;
+
+
+
+
+
+
+}
+
+.proj-bx {
+  width: calc(100vw);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.rw {
+  width: var(--rwWdth);
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.hdng {
+  font-weight: 600;
+}
+
+.prg {
+  font-weight: 400;
+}
+
+.mn-stl {
+  font-family: var(--mnFml);
+}
+
+/* .header,
+.main,
+.footer {
+  width: 100%;
+}
+
+.header-box,
+.main-box,
+.footer-box {
+  padding: 1rem;
+}
+
+.heading {
+  text-align: center;
+}
+
+.hd-heading {
+
+}
+
+.main {
+
+  flex-grow: 1;
+}
+
+.main-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.footer {
+
+}
+
+.footer-box {
+
+} */

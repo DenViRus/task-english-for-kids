@@ -1,0 +1,118 @@
+.mnPg {
+  width: 100%;
+  height: 100%;
+}
+
+.mnPg-rw {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mnPg-hdng {
+  color: var(--clGrn);
+  font-size: var(--mnPgHdngFZ);
+  text-align: center;
+  transition: color var(--trnsTmX2) linear;
+}
+
+.mnPg-hdng.mnPg-hdng-gmMd {
+  color: var(--clRd);
+}
+
+.mnPg-cont-bx {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2%;
+  row-gap: 3%;
+
+  overflow: hidden;
+}
+
+/* card */
+
+.mnPgCrd {
+  width: var(--mnPgCrdWdth);
+  height: var(--mnPgCrdHght);
+  border-radius: 2rem;
+
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--clBl);
+  transition: scale var(--trnsTmX2) linear, box-shadow var(--trnsTmX2) linear;
+
+  cursor: pointer;
+}
+
+.mnPgCrd-rw {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem;
+  background-color: var(--clSkBl);
+  border-radius: 2rem;
+
+  transition: background-color var(--trnsTmX2) linear;
+}
+
+.mnPgCrd-img-bx {
+  width: 100%;
+  border-radius: 2rem 2rem 0 0;
+  flex-grow: 1;
+}
+
+.mnPgCrd-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.mnPgCrd-cont-bx {
+  width: 100%;
+  padding: .5rem;
+  background-color: var(--clSeGrn);
+  border-radius: 0 0 2rem 2rem;
+
+  transition: background-color var(--trnsTmX2) linear;
+}
+
+.mnPgCrd-cont-bx.mnPgCrd-cont-bx-gmMd {
+  background-color: var(--clTmt);
+}
+
+.mnPgCrd-hdng,
+.mnPgCrd-prg {
+  font-size: var(--mnPgCrdFZ);
+  text-align: center;
+  color: var(--clSlvr);
+}
+
+.mnPgCrd:hover {
+  scale: 101%;
+  box-shadow: 0.2rem 0.2rem 1rem var(--clBl);
+}
+
+.mnPgCrd:hover .mnPgCrd-rw {
+  background-color: var(--clBl);
+}
+
+.mnPgCrd:hover .mnPgCrd-cont-bx {
+  background-color: var(--clGrn);
+}
+
+.mnPgCrd:hover .mnPgCrd-cont-bx.mnPgCrd-cont-bx-gmMd {
+  background-color: var(--clRd);
+}
+
+.mnPgCrd:hover .mnPgCrd-hdng,
+.mnPgCrd:hover .mnPgCrd-prg {
+  color: var(--clGld);
+}
+
+.mnPgCrd:active {
+  scale: 100%;
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--clBl);
+}

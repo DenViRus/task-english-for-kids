@@ -1,0 +1,93 @@
+.md {
+  background-color: var(--clSeGrn);
+  position: absolute;
+  right: 3rem;
+  top: 1rem;
+  padding: .5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--clBl);
+
+  z-index: 999;
+  transition: background-color var(--trnsTmX3) linear;
+}
+
+.md.md-gmMd {
+  background-color: var(--clTmt);
+}
+
+
+.md-bx {
+  width: var(--mdBxWdth);
+  height: var(--mdBxHght);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  position: relative;
+}
+
+.md-tgl {
+  width: var(--mdTglWdth);
+  height: var(--mdTglHght);
+  background-color: var(--clBl);
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  border-radius: 2rem;
+  cursor: pointer;
+  z-index: 2;
+
+  transition: left var(--trnsTmX3) linear;
+}
+
+.md-tgl.md-tgl-gmMd {
+  left: 11.5rem;
+
+}
+
+.md-txt {
+  font-size: var(--mdTxtFZ);
+  color: var(--clSlvr);
+
+  animation: tgMdTxt var(--trnsTmX3) linear;
+}
+
+.md-txt.md-txt-gmMd {
+
+  animation: tgMdTxtGmMd var(--trnsTmX3) linear;
+}
+
+@keyframes tgMdTxtGmMd {
+  0% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+@keyframes tgMdTxt {
+  0% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+
+.md:hover {
+  background-color: var(--clGrn);
+  scale: 103%;
+  box-shadow: 0.2rem 0.2rem 1rem var(--clBl);
+}
+
+.md.md-gmMd:hover {
+  background-color: var(--clRd);
+}
+
+.md:hover .md-txt {
+  color: var(--clGld);
+}

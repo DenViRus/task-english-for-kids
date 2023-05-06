@@ -1,3 +1,3 @@
-# ![](./src/greenvir30.png) English for kids ![](./src/violetvir30.png)
+# ![](./src/icon/rdme-icon/greenvir30.png) English for kids ![](./src/icon/rdme-icon/violetvir30.png)
 
 [Demo](https://DenViRus.github.io/)

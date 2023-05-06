@@ -1,0 +1,15 @@
+.hdr {
+  width: 100%;
+  background-color: var(--clSkBl);
+}
+
+.hdr-rw {
+  padding: 1rem;
+}
+
+.hdr-hdng {
+  font-size: var(--hdrHdngFZ);
+  color: var(--clBl);
+  text-align: center;
+  letter-spacing: .03em;
+}

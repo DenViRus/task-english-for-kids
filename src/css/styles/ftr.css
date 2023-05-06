@@ -1,0 +1,91 @@
+.ftr {
+  width: 100%;
+  background-color: var(--clSeGrn);
+
+}
+
+.ftr-rw {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.ftr-ctct-bx {
+  width: var(--ftrCtctBxWdth);
+  display: flex;
+  justify-content: space-between;
+}
+
+.ftr-ctct-phn-lnk,
+.ftr-ctct-tlg-lnk,
+.ftr-ctct-ml-lnk,
+.ftr-ctct-hb-lnk {
+  font-size: var(--ftrCtctLnkFZ);
+  color: var(--clSlvr);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ftr-ctct-phn-lnk::before,
+.ftr-ctct-tlg-lnk::before,
+.ftr-ctct-ml-lnk::before,
+.ftr-ctct-hb-lnk::before {
+  content: '';
+  width: var(--ftrCtctLnkBfrWdth);
+  height: var(--ftrCtctLnkBfrHght);
+  background-size: var(--ftrCtctLnkBfrWdth) var(--ftrCtctLnkBfrHght);
+  margin-right: .5rem;
+
+}
+
+.ftr-ctct-phn-lnk::before {
+  background-image: url(./../../icon/ftr-icon/phoneSilver.png);
+}
+
+.ftr-ctct-tlg-lnk::before {
+  background-image: url(./../../icon/ftr-icon/telegramSilver.png);
+}
+
+.ftr-ctct-ml-lnk::before {
+  background-image: url(./../../icon/ftr-icon/emailSilver.png);
+}
+
+.ftr-ctct-hb-lnk::before {
+  background-image: url(./../../icon/ftr-icon/githubSilver.png);
+}
+
+
+.ftr-ups-bx {
+  width: var(--ftrUpsBxWdth);
+}
+
+.ftr-ups-lnk {
+  cursor: pointer;
+}
+
+.ftr-ctct-phn-lnk:hover,
+.ftr-ctct-tlg-lnk:hover,
+.ftr-ctct-ml-lnk:hover,
+.ftr-ctct-hb-lnk:hover {
+  color: var(--clGld);
+  scale: 1.01;
+}
+
+.ftr-ctct-phn-lnk:hover::before {
+  background-image: url(./../../icon/ftr-icon/phoneGold.png);
+}
+
+.ftr-ctct-tlg-lnk:hover::before {
+  background-image: url(./../../icon/ftr-icon/telegramGold.png);
+}
+
+.ftr-ctct-ml-lnk:hover::before {
+  background-image: url(./../../icon/ftr-icon/emailGold.png);
+}
+
+.ftr-ctct-hb-lnk:hover::before {
+  background-image: url(./../../icon/ftr-icon/githubGold.png);
+}

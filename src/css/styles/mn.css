@@ -1,0 +1,51 @@
+.mn {
+  width: 100%;
+  background-color: var(--clLghtGry);
+  flex-grow: 1;
+}
+
+.mn-rw {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mn-hdng {
+  font-size: var(--mnHdngFZ);
+  color: var(--clBl);
+}
+
+.mn-md-txt {
+  color: var(--clGrn);
+  margin-left: 1rem;
+  animation: tgMnMdTxt var(--trnsTmX3) linear;
+}
+
+.mn-md-txt-gmMd {
+  color: var(--clRd);
+  animation: tgMnMdTxtGmMd var(--trnsTmX3) linear;
+}
+
+@keyframes tgMnMdTxtGmMd {
+  0% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+@keyframes tgMnMdTxt {
+  0% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+
+
+.mn-cont-bx {
+  flex-grow: 1;
+}
