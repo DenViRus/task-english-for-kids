@@ -1,7 +1,6 @@
 .ftr {
   width: 100%;
   background-color: var(--clSeGrn);
-
 }
 
 .ftr-rw {
@@ -9,7 +8,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .ftr-ctct-bx {
@@ -38,7 +36,6 @@
   height: var(--ftrCtctLnkBfrHght);
   background-size: var(--ftrCtctLnkBfrWdth) var(--ftrCtctLnkBfrHght);
   margin-right: .5rem;
-
 }
 
 .ftr-ctct-phn-lnk::before {
@@ -56,7 +53,6 @@
 .ftr-ctct-hb-lnk::before {
   background-image: url(./../../icon/ftr-icon/githubSilver.png);
 }
-
 
 .ftr-ups-bx {
   width: var(--ftrUpsBxWdth);

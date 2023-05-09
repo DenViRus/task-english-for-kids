@@ -8,7 +8,7 @@ export default class Nv {
     this.itmsArr = null;
   }
 
-  getNv() {
+  getNv(id) {
     this.nv = this.act.createElem('nav', { class: 'nv', id: 'nv' });
     this.nvLst = this.act.createElem('ul', { class: 'nv-lst' });
     const nvLstMnPgItm = this.act.createElem('li', { class: 'nv-lst-itm nv-lst-mnPg-itm', 'data-id': 'mnPg' });
@@ -27,6 +27,7 @@ export default class Nv {
     this.act.appEl(this.nvLst, nvLstStItm);
     this.act.appEl(this.nv, this.nvLst);
     this.itmsArr = [...this.nvLst.querySelectorAll('.nv-lst-itm')];
+    this.getItmActv(id);
     return this.nv;
   }
 
@@ -37,9 +38,5 @@ export default class Nv {
   getItmActv(id) {
     this.itmsArr.forEach((el) => el.querySelector('.nv-lst-itm-txt').classList.remove('itm-txt-actv'));
     this.act.getElByDataID(this.itmsArr, id).querySelector('.nv-lst-itm-txt').classList.add('itm-txt-actv');
-  }
-
-  nvControl() {
-
   }
 }

@@ -14,8 +14,4 @@ export default class Hdr {
     this.act.appEl(this.hdr, hdrRw);
     return this.hdr;
   }
-
-  hdrControl() {
-
-  }
 }

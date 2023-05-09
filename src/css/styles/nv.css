@@ -4,8 +4,6 @@
   background-color: var(--clNvBlk);
   position: absolute;
   left: -30rem;
-
-
   z-index: 777;
   transition: left var(--trnsTmX3) linear;
 }
@@ -61,7 +59,6 @@
   font-size: var(--nvLstItmTxtFZHv);
 }
 
-
 .nv-lst-itm-txt.itm-txt-actv::after,
 .nv-lst-itm-txt:hover::after {
   content: "";
@@ -88,7 +85,6 @@
   background-color: var(--clYlw);
 }
 
-.nv-lst-gm-itm-txt.itm-txt-actv::after,
 .nv-lst-gm-itm-txt:hover::after {
   background-color: var(--clGld);
 }

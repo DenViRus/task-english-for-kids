@@ -58,12 +58,27 @@
 
   /* main */
   --mnHdngFZ: 3.5rem;
-  --mnPgHdngFZ: 3rem;
 
+  /* mnPg */
+  --mnPgHdngFZ: 3rem;
   --mnPgCrdWdth: 23%;
   --mnPgCrdHght: 45%;
-
   --mnPgCrdFZ: 2.5rem;
+
+  /* gm */
+  --gmAnsBxWdth: 20rem;
+  --gmAnsHdngFZ: 2rem;
+  --gmHdngFZ: 3rem;
+
+  --gmBtnFZ: 2rem;
+  --gmBtnWdth: 3rem;
+  --gmBtnHght: 3rem;
+
+  --gmCrdWdth: 23%;
+  --gmCrdHght: 45%;
+  --gmCrdHdngFZ: 2.5rem;
+  --gmCrdBtnWdth: 3rem;
+  --gmCrdBtnHght: 3rem;
 
   /* footer */
   --ftrCtctBxWdth: 85%;
@@ -72,12 +87,6 @@
   --ftrCtctLnkBfrHght: 3rem;
 
   --ftrUpsBxWdth: 10%;
-
-
-
-
-
-
 }
 
 .proj-bx {
@@ -113,41 +122,3 @@
   font-family: var(--gmFml);
 }
 
-/* .header,
-.main,
-.footer {
-  width: 100%;
-}
-
-.header-box,
-.main-box,
-.footer-box {
-  padding: 1rem;
-}
-
-.heading {
-  text-align: center;
-}
-
-.hd-heading {
-
-}
-
-.main {
-
-  flex-grow: 1;
-}
-
-.main-box {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.footer {
-
-}
-
-.footer-box {
-
-} */

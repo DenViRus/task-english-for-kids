@@ -6,13 +6,13 @@ export default class Brg {
     this.brgItm = null;
   }
 
-  getBrg() {
+  getBrg(md) {
     this.brg = this.act.createElem('div', { class: 'brg', id: 'brg' });
     const brgBx = this.act.createElem('div', { class: 'brg-bx' });
     this.brgItm = this.act.createElem('div', { class: 'brg-itm' });
-
     this.act.appEl(brgBx, this.brgItm);
     this.act.appEl(this.brg, brgBx);
+    this.toggleBrgMd(md);
     return this.brg;
   }
 
@@ -23,9 +23,5 @@ export default class Brg {
   toggleBrg() {
     this.brg.classList.toggle('brg-actv');
     this.brgItm.classList.toggle('brg-itm-actv');
-  }
-
-  brgControl() {
-
   }
 }

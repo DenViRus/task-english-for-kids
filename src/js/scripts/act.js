@@ -1,5 +1,4 @@
 const act = {
-
   createElem(el, elAttr, cont = '') {
     const elem = document.createElement(el);
     for (const prop in elAttr) {

@@ -46,8 +46,4 @@ export default class Ftr {
     this.act.appEl(this.ftr, ftrRw);
     return this.ftr;
   }
-
-  ftrControl() {
-
-  }
 }

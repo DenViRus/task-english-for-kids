@@ -28,8 +28,6 @@
   align-items: center;
   column-gap: 2%;
   row-gap: 3%;
-
-  overflow: hidden;
 }
 
 /* card */
@@ -38,10 +36,8 @@
   width: var(--mnPgCrdWdth);
   height: var(--mnPgCrdHght);
   border-radius: 2rem;
-
   box-shadow: 0.2rem 0.2rem 0.5rem var(--clBl);
-  transition: scale var(--trnsTmX2) linear, box-shadow var(--trnsTmX2) linear;
-
+  transition: scale var(--trnsTmX1) linear, box-shadow var(--trnsTmX1) linear;
   cursor: pointer;
 }
 
@@ -51,11 +47,10 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: .5rem;
+  padding: 0.5rem;
   background-color: var(--clSkBl);
   border-radius: 2rem;
-
-  transition: background-color var(--trnsTmX2) linear;
+  transition: background-color var(--trnsTmX1) linear;
 }
 
 .mnPgCrd-img-bx {
@@ -72,11 +67,10 @@
 
 .mnPgCrd-cont-bx {
   width: 100%;
-  padding: .5rem;
+  padding: 0.5rem;
   background-color: var(--clSeGrn);
   border-radius: 0 0 2rem 2rem;
-
-  transition: background-color var(--trnsTmX2) linear;
+  transition: background-color var(--trnsTmX1) linear;
 }
 
 .mnPgCrd-cont-bx.mnPgCrd-cont-bx-gmMd {

@@ -142,9 +142,18 @@ import emotionsSetBPrideAud from '../../audio/mn-aud/emotionsSetB-aud/pride.mp3'
 import emotionsSetBGratitudeImg from '../../img/mn-img/emotionsSetB-img/gratitude.jpg';
 import emotionsSetBGratitudeAud from '../../audio/mn-aud/emotionsSetB-aud/gratitude.mp3';
 
+import wnImg from '../../img/mn-img/dflt-img/success.jpg';
+import wnAud from '../../audio/dflt-aud/success.mp3';
+import lsImg from '../../img/mn-img/dflt-img/failure.jpg';
+import lsAud from '../../audio/dflt-aud/failure.mp3';
+import crctImg from '../../img/mn-img/dflt-img/correct.png';
+import crctAud from '../../audio/dflt-aud/correct.mp3';
+import errImg from '../../img/mn-img/dflt-img/error.png';
+import errAud from '../../audio/dflt-aud/error.mp3';
+
 const dt = [
   {
-    id: 'actionSetA',
+    id: 'gameActionSetA',
     nm: 'Action (set A)',
     img: actionSetAImg,
     dt: [
@@ -207,7 +216,7 @@ const dt = [
     ],
   },
   {
-    id: 'actionSetB',
+    id: 'gameActionSetB',
     nm: 'Action (set B)',
     img: actionSetBImg,
     dt: [
@@ -270,7 +279,7 @@ const dt = [
     ],
   },
   {
-    id: 'animalSetA',
+    id: 'gameAnimalSetA',
     nm: 'Animal (set A)',
     img: animalSetAImg,
     dt: [
@@ -333,7 +342,7 @@ const dt = [
     ],
   },
   {
-    id: 'animalSetB',
+    id: 'gameAnimalSetB',
     nm: 'Animal (set B)',
     img: animalSetBImg,
     dt: [
@@ -396,7 +405,7 @@ const dt = [
     ],
   },
   {
-    id: 'clothesSetA',
+    id: 'gameClothesSetA',
     nm: 'Clothes (set A)',
     img: clothesSetAImg,
     dt: [
@@ -459,7 +468,7 @@ const dt = [
     ],
   },
   {
-    id: 'clothesSetB',
+    id: 'gameClothesSetB',
     nm: 'Clothes (set B)',
     img: clothesSetBImg,
     dt: [
@@ -522,7 +531,7 @@ const dt = [
     ],
   },
   {
-    id: 'emotionsSetA',
+    id: 'gameEmotionsSetA',
     nm: 'Emotions (set A)',
     img: emotionsSetAImg,
     dt: [
@@ -585,7 +594,7 @@ const dt = [
     ],
   },
   {
-    id: 'emotionsSetB',
+    id: 'gameEmotionsSetB',
     nm: 'Emotions (set B)',
     img: emotionsSetBImg,
     dt: [
@@ -648,4 +657,16 @@ const dt = [
     ],
   },
 ];
-export default dt;
+
+const dfltDt = {
+  wnImg,
+  wnAud,
+  lsImg,
+  lsAud,
+  crctImg,
+  crctAud,
+  errImg,
+  errAud,
+};
+
+export { dt, dfltDt };

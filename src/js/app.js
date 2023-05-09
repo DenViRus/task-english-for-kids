@@ -8,7 +8,7 @@ import MnPg from './scripts/MnPg.js';
 import Gm from './scripts/Gm.js';
 
 import Ftr from './scripts/Ftr.js';
-import dt from './scripts/dt.js';
+import { dt, dfltDt } from './scripts/dt.js';
 import act from './scripts/act.js';
 
 const projBx = document.getElementById('projBx');
@@ -17,7 +17,7 @@ const brg = new Brg(act);
 const nv = new Nv(dt, act);
 const md = new Md(act);
 const mnPg = new MnPg(dt, act);
-const gm = new Gm(dt, act);
+const gm = new Gm(dt, dfltDt, act);
 
 const mn = new Mn(mnPg, gm, act);
 

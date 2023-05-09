@@ -22,16 +22,12 @@ export default class Controller {
 
   start() {
     this.bxHdr = this.hdr.getHdr();
-    this.bxBrg = this.brg.getBrg();
-    this.bxNv = this.nv.getNv();
     this.bxMd = this.md.getMd();
-    this.bxMn = this.mn.getMn();
+    this.bxBrg = this.brg.getBrg(this.md.mdTxt.textContent);
+    this.bxMn = this.mn.getMn(this.md.mdTxt.textContent);
+    this.bxNv = this.nv.getNv(this.mn.mnCont.id);
     this.bxFtr = this.ftr.getFtr();
-
     this.act.appEl(this.bx, this.bxHdr, this.bxBrg, this.bxNv, this.bxMd, this.bxMn, this.bxFtr);
-    this.brg.toggleBrgMd(this.md.mdTxt.textContent);
-    this.nv.getItmActv(this.mn.mnCont.id);
-    this.mn.toggleMnMd(this.md.mdTxt.textContent);
   }
 
   brgLstnr1 = (evt) => {
@@ -55,11 +51,36 @@ export default class Controller {
     }
   };
 
+  mnLstnr1 = (evt) => {
+    const trgt = evt.target;
+
+    if (trgt.closest('.mnPgCrd')) {
+      evt.preventDefault();
+      this.mn.replMnCont(this.mn.gm.getGm(trgt.closest('.mnPgCrd').id), this.md.mdTxt.textContent);
+    }
+  };
+
+  nvLstnr1 = (evt) => {
+    const trgt = evt.target;
+
+    if (trgt.closest('.nv-lst-mnPg-itm')) {
+      evt.preventDefault();
+      this.mn.replMnCont(this.mn.mnPg.getMnPg(), this.md.mdTxt.textContent);
+      this.nv.getItmActv(this.mn.mnCont.id);
+    }
+
+    if (trgt.closest('.nv-lst-gm-itm')) {
+      evt.preventDefault();
+      this.mn.replMnCont(this.mn.gm.getGm(trgt.closest('.nv-lst-gm-itm').dataset.id), this.md.mdTxt.textContent);
+      this.nv.getItmActv(this.mn.mnCont.id);
+    }
+  };
+
   ctrlrControl() {
     this.start();
-    this.mn.mnControl();
-
     document.addEventListener('click', this.brgLstnr1);
     document.addEventListener('click', this.mdLstnr1);
+    document.addEventListener('click', this.mnLstnr1);
+    document.addEventListener('click', this.nvLstnr1);
   }
 }

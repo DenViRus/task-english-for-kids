@@ -12,7 +12,6 @@ export default class Md {
     const mdBx = this.act.createElem('div', { class: 'md-bx' });
     this.mdTgl = this.act.createElem('div', { class: 'md-tgl' });
     this.mdTxt = this.act.createElem('span', { class: 'hdng mn-stl md-txt' }, 'Train');
-
     this.act.appEl(mdBx, this.mdTgl, this.mdTxt);
     this.act.appEl(this.md, mdBx);
     return this.md;
@@ -23,9 +22,5 @@ export default class Md {
     this.mdTgl.classList.toggle('md-tgl-gmMd');
     this.mdTxt.classList.toggle('md-txt-gmMd');
     this.mdTxt.textContent = (this.mdTxt.classList.contains('md-txt-gmMd') ? 'Play' : 'Train');
-  }
-
-  mdControl() {
-
   }
 }

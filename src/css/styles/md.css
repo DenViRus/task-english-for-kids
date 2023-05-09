@@ -7,7 +7,6 @@
   border-radius: 2rem;
   cursor: pointer;
   box-shadow: 0.2rem 0.2rem 0.5rem var(--clBl);
-
   z-index: 999;
   transition: background-color var(--trnsTmX3) linear;
 }
@@ -34,28 +33,23 @@
   position: absolute;
   left: 0;
   top: 0;
-
   border-radius: 2rem;
   cursor: pointer;
   z-index: 2;
-
   transition: left var(--trnsTmX3) linear;
 }
 
 .md-tgl.md-tgl-gmMd {
   left: 11.5rem;
-
 }
 
 .md-txt {
   font-size: var(--mdTxtFZ);
   color: var(--clSlvr);
-
   animation: tgMdTxt var(--trnsTmX3) linear;
 }
 
 .md-txt.md-txt-gmMd {
-
   animation: tgMdTxtGmMd var(--trnsTmX3) linear;
 }
 

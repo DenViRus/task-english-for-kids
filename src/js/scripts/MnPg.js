@@ -18,7 +18,6 @@ export default class MnPg {
     for (const el of this.dt) {
       this.act.appEl(this.mnPgContBx, this.getMnPgCrd(el));
     }
-
     this.act.appEl(mnPgRw, this.mnPgHdng, this.mnPgContBx);
     this.act.appEl(this.mnPg, mnPgRw);
     this.mnPgCrdsArr = [...this.mnPgContBx.querySelectorAll('.mnPgCrd')];
@@ -29,12 +28,10 @@ export default class MnPg {
     const mnPgCrd = this.act.createElem('div', { class: 'mnPgCrd', id: dt.id });
     const mnPgCrdRw = this.act.createElem('div', { class: 'mnPgCrd-rw' });
     const mnPgCrdImgBx = this.act.createElem('div', { class: 'mnPgCrd-img-bx' });
-    const mnPgCrdImg = this.act.createElem('img', { class: 'mnPgCrd-img', src: dt.img, alt: `Game ${dt.nm} image` });
-
+    const mnPgCrdImg = this.act.createElem('img', { class: 'mnPgCrd-img', src: dt.img, alt: `game ${dt.nm} image` });
     const mnPgCrdContBx = this.act.createElem('div', { class: 'mnPgCrd-cont-bx' });
     const mnPgCrdHdng = this.act.createElem('h4', { class: 'hdng mn-stl mnPgCrd-hdng' }, dt.nm);
     const mnPgCrdPrg = this.act.createElem('p', { class: 'prg mn-stl mnPgCrd-prg' }, `${dt.dt.length} cards`);
-
     this.act.appEl(mnPgCrdImgBx, mnPgCrdImg);
     this.act.appEl(mnPgCrdContBx, mnPgCrdHdng, mnPgCrdPrg);
     this.act.appEl(mnPgCrdRw, mnPgCrdImgBx, mnPgCrdContBx);
@@ -50,9 +47,5 @@ export default class MnPg {
       this.mnPgHdng.classList.remove('mnPg-hdng-gmMd');
       this.mnPgCrdsArr.forEach((el) => el.querySelector('.mnPgCrd-cont-bx').classList.remove('mnPgCrd-cont-bx-gmMd'));
     }
-  }
-
-  mnPgControl() {
-
   }
 }
