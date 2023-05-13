@@ -46,5 +46,31 @@ const act = {
   checkIncludeByID(arr, id) {
     return arr.map((data) => data.id).includes(id);
   },
+
+  getRndItm(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  },
+
+  getRndArr(arr) {
+    const rndArr = [];
+    for (let i = 0, len = arr.length; i < len; i++) {
+      let numb = this.getRndItm(0, len);
+      if (rndArr.includes(numb)) {
+        numb = this.getRndItm(0, len);
+        i--;
+      } else {
+        rndArr.push(numb);
+
+        // if (j === 3 || j === 5 || j === 7) pageVal.reverse();
+      }
+
+      // const element = array[index];
+    }
+    return rndArr;
+  },
+
+  plyAud(url) {
+    new Audio(url).play();
+  },
 };
 export default act;

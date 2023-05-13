@@ -16,7 +16,13 @@ export default class Mn {
     this.mnHdng = this.act.createElem('h2', { class: 'hdng mn-stl mn-hdng' }, 'Train & Play:');
     this.mnMdTxt = this.act.createElem('span', { class: 'hdng mn-stl mn-md-txt' });
     this.mnContBx = this.act.createElem('div', { class: 'mn-cont-bx' });
+
     this.mnCont = this.mnPg.getMnPg();
+
+    // // just for develop start
+    // this.mnCont = this.gm.getGm('gameClothesSetA');
+    // // just for develop end
+
     this.act.appEl(this.mnHdng, this.mnMdTxt);
     this.act.appEl(this.mnContBx, this.mnCont);
     this.act.appEl(mnRw, this.mnHdng, this.mnContBx);

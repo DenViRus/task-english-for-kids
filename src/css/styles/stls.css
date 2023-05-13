@@ -13,10 +13,12 @@
   --clYlw: rgb(255, 255, 0);
   --clYlwGrn: rgb(173, 255, 47);
   --clSlvr: rgb(192, 192, 192);
+  --clDrkBl: rgb(0, 0, 139);
   --clBl: rgb(0, 0, 255);
   --clTrqs: rgb(64, 224, 208);
   --clSkBl: rgb(135, 206, 235);
   --clLghtBl: rgb(173, 216, 230);
+  --clDrkGrn: rgb(0, 100, 0);
   --clGrn: rgb(0, 128, 0);
   --clSeGrn: rgb(46, 139, 87);
   --clLme: rgb(0, 255, 0);
@@ -121,4 +123,3 @@
 .gm-stl {
   font-family: var(--gmFml);
 }
-

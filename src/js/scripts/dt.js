@@ -453,7 +453,7 @@ const dt = [
       },
       {
         id: 'clothesSetACoat',
-        word: 'coat',
+        en: 'coat',
         ru: 'пальто',
         img: clothesSetACoatImg,
         aud: clothesSetACoatAud,

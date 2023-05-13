@@ -5,6 +5,7 @@ export default class Gm {
     this.act = act;
 
     this.gmDt = null;
+    this.gmCrdsDt = null;
     this.gm = null;
 
     this.gmAnsBx = null;
@@ -18,22 +19,31 @@ export default class Gm {
     this.gmContBx = null;
 
     this.gmCrdsArr = null;
+    this.gmDtRndArr = null;
   }
+
+  // UI logic
 
   getGm(id) {
     this.gmDt = this.act.getElByID(this.dt, id);
+    this.gmCrdsDt = this.gmDt.dt;
     this.gm = this.act.createElem('div', { class: 'gm', id: this.gmDt.id });
     const gmRw = this.act.createElem('div', { class: 'gmRw' });
     const gmHdngBx = this.act.createElem('div', { class: 'gm-hdng-bx' });
     this.gmHdng = this.act.createElem('h3', { class: 'hdng gm-stl gm-hdng' }, this.gmDt.nm);
     this.act.appEl(gmHdngBx, this.gmHdng);
     this.gmContBx = this.act.createElem('div', { class: 'gm-cont-bx' });
-    for (const el of this.gmDt.dt) {
+    for (const el of this.gmCrdsDt) {
       this.act.appEl(this.gmContBx, this.getGmCrd(el));
     }
     this.act.appEl(gmRw, gmHdngBx, this.gmContBx);
     this.act.appEl(this.gm, gmRw);
     this.gmCrdsArr = [...this.gmContBx.querySelectorAll('.gmCrd')];
+
+    // just for develop start
+    this.gmDtRndArr = this.act.getRndArr(this.gmCrdsDt);
+    console.log(this.gmDtRndArr);
+    // just for develop end
     return this.gm;
   }
 
@@ -51,8 +61,8 @@ export default class Gm {
     return this.gmAnsBx;
   }
 
-  getGmBtn() {
-    this.gmBtn = this.act.createElem('button', { class: 'hdng gm-stl gm-btn', type: 'button' }, 'Start game');
+  getGmStrtBtn() {
+    this.gmBtn = this.act.createElem('button', { class: 'hdng gm-stl gm-strt-btn', type: 'button', id: 'gmStrtBtn' }, 'START');
     return this.gmBtn;
   }
 
@@ -67,7 +77,7 @@ export default class Gm {
     return gmCrd;
   }
 
-  getgmCrdContBx(dt) {
+  getGmCrdContBx(dt) {
     const gmCrdContBx = this.act.createElem('div', { class: 'gmCrd-cont-bx' });
     const gmCrdHdng = this.act.createElem('h4', { class: 'hdng gm-stl gmCrd-hdng' }, dt.en);
     const gmCrdbtn = this.act.createElem('button', { class: 'hdng gm-stl gmCrd-btn', type: 'button' });
@@ -79,7 +89,7 @@ export default class Gm {
     if (md === 'Play') {
       this.gmHdng.classList.add('gm-hdng-gmMd');
       this.act.beforEl(this.gmHdng, this.getGmAnsBx());
-      this.act.afterEl(this.gmHdng, this.getGmBtn());
+      this.act.afterEl(this.gmHdng, this.getGmStrtBtn());
       this.gmCrdsArr.forEach((el) => {
         el.querySelector('.gmCrd-rw').classList.add('gmCrd-rw-gmMd');
         el.querySelector('.gmCrd-img-bx').classList.add('gmCrd-img-bx-gmMd');
@@ -100,8 +110,59 @@ export default class Gm {
         el.querySelector('.gmCrd-rw').classList.remove('gmCrd-rw-gmMd');
         el.querySelector('.gmCrd-img-bx').classList.remove('gmCrd-img-bx-gmMd');
         el.querySelector('.gmCrd-img').classList.remove('gmCrd-img-gmMd');
-        this.act.appEl(el.querySelector('.gmCrd-rw'), this.getgmCrdContBx(this.gmDt.dt[i]));
+        this.act.appEl(el.querySelector('.gmCrd-rw'), this.getGmCrdContBx(this.gmCrdsDt[i]));
       });
     }
   }
+
+  getGmMdRct(md, id) {
+    if (md === 'Train') {
+      this.plyGmCrdAud(id);
+    }
+  }
+
+  // Train logic
+  plyGmCrdAud(id) {
+    this.act.plyAud(this.act.getElByID(this.gmCrdsDt, id).aud);
+  }
+
+  rttGmCrd(id) {
+    if (this.act.getElByID(this.gmCrdsArr, id).classList.contains('gmCrd-rtt')) {
+      this.act.getElByID(this.gmCrdsArr, id).classList.remove('gmCrd-rtt');
+      setTimeout(() => { this.act.getElByID(this.gmCrdsArr, id).querySelector('.gmCrd-hdng').textContent = this.act.getElByID(this.gmCrdsDt, id).en; }, 450);
+    } else {
+      this.act.getElByID(this.gmCrdsArr, id).classList.add('gmCrd-rtt');
+      setTimeout(() => { this.act.getElByID(this.gmCrdsArr, id).querySelector('.gmCrd-hdng').textContent = this.act.getElByID(this.gmCrdsDt, id).ru; }, 450);
+    }
+  }
+
+  checkRttGmCrd(id) {
+    this.gmCrdsArr.filter((el) => el.classList.contains('gmCrd-rtt')).forEach((el) => {
+      if (el.id !== id) {
+        const needEl = el;
+        needEl.classList.remove('gmCrd-rtt');
+        setTimeout(() => { needEl.querySelector('.gmCrd-hdng').textContent = this.act.getElByID(this.gmCrdsDt, needEl.id).en; }, 450);
+      } else if (!id) {
+        const needEl = el;
+        needEl.classList.remove('gmCrd-rtt');
+        setTimeout(() => { needEl.querySelector('.gmCrd-hdng').textContent = this.act.getElByID(this.gmCrdsDt, needEl.id).en; }, 450);
+      }
+    });
+  }
+
+  // Game logic
+
+  getGmRptBtn() {
+    const rptBtn = this.act.createElem('button', { class: 'hdng gm-stl gm-rpt-btn', type: 'button', id: 'gmRptBtn' }, 'REPEAT');
+    this.act.replEl(rptBtn, this.gmBtn);
+    this.gmBtn = rptBtn;
+  }
+
+  // gmStrtGm(md) {
+  //   // this.gmDtRndArr = this.act.getRndArr(this.gmCrdsDt);
+
+  //   this.getGmRptBtn();
+
+  //   // console.log(this.gmDtRndArr);
+  // }
 }

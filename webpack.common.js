@@ -29,12 +29,16 @@ module.exports = {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
+      // {
+      //   test: /\.(ico|jpg|jpeg|png|gif|txt|)$/,
+      //   type: "asset/resource",
+      // },
+      // {
+      //   test: /\.(woff|woff2|eot|ttf|otf|svg|mp3|mp4|)$/,
+      //   type: "asset/inline",
+      // },
       {
-        test: /\.(ico|jpg|jpeg|png|gif|txt|)$/,
-        type: "asset/resource",
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf|svg|mp3|mp4|)$/,
+        test: /\.(ico|jpg|jpeg|png|gif|txt|woff|woff2|eot|ttf|otf|svg|mp3|mp4|)$/,
         type: "asset/inline",
       },
     ],
