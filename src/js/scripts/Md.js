@@ -23,4 +23,10 @@ export default class Md {
     this.mdTxt.classList.toggle('md-txt-gmMd');
     this.mdTxt.textContent = (this.mdTxt.classList.contains('md-txt-gmMd') ? 'Play' : 'Train');
   }
+
+  toggleMdDsbl() {
+    this.md.classList.toggle('md-gmMd-dsbl');
+    this.mdTgl.classList.toggle('md-tgl-gmMd-dsbl');
+    this.mdTxt.classList.toggle('md-txt-gmMd-dsbl');
+  }
 }

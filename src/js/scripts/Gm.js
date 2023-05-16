@@ -5,45 +5,36 @@ export default class Gm {
     this.act = act;
 
     this.gmDt = null;
-    this.gmCrdsDt = null;
+    this.gmCrdsDtArr = null;
     this.gm = null;
-
     this.gmAnsBx = null;
     this.gmAnsCrctTxt = null;
     this.gmAnsErrTxt = null;
-
     this.gmHdng = null;
-
     this.gmBtn = null;
-
     this.gmContBx = null;
-
     this.gmCrdsArr = null;
-    this.gmDtRndArr = null;
+    this.gmCrdsDtRndArr = null;
+    this.gmRndCrdDt = null;
   }
 
   // UI logic
 
   getGm(id) {
     this.gmDt = this.act.getElByID(this.dt, id);
-    this.gmCrdsDt = this.gmDt.dt;
+    this.gmCrdsDtArr = this.gmDt.dt;
     this.gm = this.act.createElem('div', { class: 'gm', id: this.gmDt.id });
     const gmRw = this.act.createElem('div', { class: 'gmRw' });
     const gmHdngBx = this.act.createElem('div', { class: 'gm-hdng-bx' });
     this.gmHdng = this.act.createElem('h3', { class: 'hdng gm-stl gm-hdng' }, this.gmDt.nm);
     this.act.appEl(gmHdngBx, this.gmHdng);
     this.gmContBx = this.act.createElem('div', { class: 'gm-cont-bx' });
-    for (const el of this.gmCrdsDt) {
+    for (const el of this.gmCrdsDtArr) {
       this.act.appEl(this.gmContBx, this.getGmCrd(el));
     }
     this.act.appEl(gmRw, gmHdngBx, this.gmContBx);
     this.act.appEl(this.gm, gmRw);
     this.gmCrdsArr = [...this.gmContBx.querySelectorAll('.gmCrd')];
-
-    // just for develop start
-    this.gmDtRndArr = this.act.getRndArr(this.gmCrdsDt);
-    console.log(this.gmDtRndArr);
-    // just for develop end
     return this.gm;
   }
 
@@ -110,7 +101,7 @@ export default class Gm {
         el.querySelector('.gmCrd-rw').classList.remove('gmCrd-rw-gmMd');
         el.querySelector('.gmCrd-img-bx').classList.remove('gmCrd-img-bx-gmMd');
         el.querySelector('.gmCrd-img').classList.remove('gmCrd-img-gmMd');
-        this.act.appEl(el.querySelector('.gmCrd-rw'), this.getGmCrdContBx(this.gmCrdsDt[i]));
+        this.act.appEl(el.querySelector('.gmCrd-rw'), this.getGmCrdContBx(this.gmCrdsDtArr[i]));
       });
     }
   }
@@ -119,20 +110,29 @@ export default class Gm {
     if (md === 'Train') {
       this.plyGmCrdAud(id);
     }
+    if (md === 'Play') {
+      this.togglePaus();
+      if (this.gmCrdsDtRndArr && this.gmRndCrdDt) {
+        if (this.gmAnsCrctTxt.textContent > 0 && this.gmAnsErrTxt.textContent > 0) {
+          (this.gmRndCrdDt.id === id) ? this.crctAnsRct(id) : this.errAnsRct(id);
+        }
+      }
+      this.togglePaus();
+    }
   }
 
   // Train logic
   plyGmCrdAud(id) {
-    this.act.plyAud(this.act.getElByID(this.gmCrdsDt, id).aud);
+    this.act.plyAud(this.act.getElByID(this.gmCrdsDtArr, id).aud);
   }
 
   rttGmCrd(id) {
     if (this.act.getElByID(this.gmCrdsArr, id).classList.contains('gmCrd-rtt')) {
       this.act.getElByID(this.gmCrdsArr, id).classList.remove('gmCrd-rtt');
-      setTimeout(() => { this.act.getElByID(this.gmCrdsArr, id).querySelector('.gmCrd-hdng').textContent = this.act.getElByID(this.gmCrdsDt, id).en; }, 450);
+      setTimeout(() => { this.act.getElByID(this.gmCrdsArr, id).querySelector('.gmCrd-hdng').textContent = this.act.getElByID(this.gmCrdsDtArr, id).en; }, 450);
     } else {
       this.act.getElByID(this.gmCrdsArr, id).classList.add('gmCrd-rtt');
-      setTimeout(() => { this.act.getElByID(this.gmCrdsArr, id).querySelector('.gmCrd-hdng').textContent = this.act.getElByID(this.gmCrdsDt, id).ru; }, 450);
+      setTimeout(() => { this.act.getElByID(this.gmCrdsArr, id).querySelector('.gmCrd-hdng').textContent = this.act.getElByID(this.gmCrdsDtArr, id).ru; }, 450);
     }
   }
 
@@ -141,16 +141,23 @@ export default class Gm {
       if (el.id !== id) {
         const needEl = el;
         needEl.classList.remove('gmCrd-rtt');
-        setTimeout(() => { needEl.querySelector('.gmCrd-hdng').textContent = this.act.getElByID(this.gmCrdsDt, needEl.id).en; }, 450);
+        setTimeout(() => { needEl.querySelector('.gmCrd-hdng').textContent = this.act.getElByID(this.gmCrdsDtArr, needEl.id).en; }, 450);
       } else if (!id) {
         const needEl = el;
         needEl.classList.remove('gmCrd-rtt');
-        setTimeout(() => { needEl.querySelector('.gmCrd-hdng').textContent = this.act.getElByID(this.gmCrdsDt, needEl.id).en; }, 450);
+        setTimeout(() => { needEl.querySelector('.gmCrd-hdng').textContent = this.act.getElByID(this.gmCrdsDtArr, needEl.id).en; }, 450);
       }
     });
   }
 
   // Game logic
+  togglePaus() {
+    this.gmCrdsArr.forEach((el) => el.classList.toggle('gmCrd-dsbl'));
+  }
+
+  rptWrd() {
+    if (this.gmRndCrdDt) this.act.plyAud(this.gmRndCrdDt.aud);
+  }
 
   getGmRptBtn() {
     const rptBtn = this.act.createElem('button', { class: 'hdng gm-stl gm-rpt-btn', type: 'button', id: 'gmRptBtn' }, 'REPEAT');
@@ -158,11 +165,45 @@ export default class Gm {
     this.gmBtn = rptBtn;
   }
 
-  // gmStrtGm(md) {
-  //   // this.gmDtRndArr = this.act.getRndArr(this.gmCrdsDt);
+  getGmRndCrdDt(arr) {
+    return arr[this.act.getRndItm(0, arr.length - 1)];
+  }
 
-  //   this.getGmRptBtn();
+  gmPlyGm(arr) {
+    this.gmRndCrdDt = this.getGmRndCrdDt(arr);
+    this.act.plyAud(this.gmRndCrdDt.aud);
+  }
 
-  //   // console.log(this.gmDtRndArr);
-  // }
+  gmStrtGm() {
+    this.gmAnsCrctTxt.textContent = this.gmCrdsDtArr.length;
+    this.gmAnsErrTxt.textContent = Math.floor(this.gmCrdsDtArr.length / 2);
+    this.getGmRptBtn();
+    this.gmCrdsDtRndArr = this.act.getRndArr(this.gmCrdsDtArr);
+    this.gmRndCrdDt = this.getGmRndCrdDt(this.gmCrdsDtRndArr);
+    this.act.plyAud(this.gmRndCrdDt.aud);
+  }
+
+  gmFnshGm() {
+    this.gmCrdsDtRndArr = null;
+    this.gmRndCrdDt = null;
+  }
+
+  crctAnsRct(id) {
+    this.act.rmvElById(this.gmCrdsDtRndArr, id);
+    this.act.getElByID(this.gmCrdsArr, id).classList.remove('gmCrd-errAns');
+    this.act.getElByID(this.gmCrdsArr, id).querySelector('.gmCrd-rw').classList.remove('gmCrd-rw-gmMd-errAns');
+    this.act.getElByID(this.gmCrdsArr, id).classList.add('gmCrd-crctAns');
+    this.act.getElByID(this.gmCrdsArr, id).querySelector('.gmCrd-rw').classList.add('gmCrd-rw-gmMd-crctAns');
+    this.gmAnsCrctTxt.textContent = parseInt(this.gmAnsCrctTxt.textContent, 10) - 1;
+    this.act.plyAud(this.dfltDt.crctAud);
+    (parseInt(this.gmAnsCrctTxt.textContent, 10) > 0) ? this.gmPlyGm(this.gmCrdsDtRndArr) : this.gmFnshGm();
+  }
+
+  errAnsRct(id) {
+    this.act.getElByID(this.gmCrdsArr, id).classList.add('gmCrd-errAns');
+    this.act.getElByID(this.gmCrdsArr, id).querySelector('.gmCrd-rw').classList.add('gmCrd-rw-gmMd-errAns');
+    this.gmAnsErrTxt.textContent = parseInt(this.gmAnsErrTxt.textContent, 10) - 1;
+    this.act.plyAud(this.dfltDt.errAud);
+    if (parseInt(this.gmAnsErrTxt.textContent, 10) === 0) this.gmFnshGm();
+  }
 }

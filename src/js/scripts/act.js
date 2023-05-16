@@ -31,16 +31,23 @@ const act = {
     el.after(...nextEls);
   },
 
-  getElByID(arr, id) {
-    return arr.find((el) => el.id === id);
+  getElByID(arr, curId, el = arr.find(({ id }) => id === curId)) {
+    return el;
   },
 
-  getElByDataID(arr, id) {
-    return arr.find((el) => el.dataset.id === id);
+  getElByDataID(arr, curId, el = arr.find(({ dataset }) => dataset.id === curId)) {
+    return el;
   },
 
-  getIndByID(arr, id) {
-    return arr.findIndex((el) => el.id === id);
+  getIndByID(arr, curId, ind = arr.findIndex(({ id }) => id === curId)) {
+    return ind;
+  },
+
+  rmvElById(arr, curId, needEl = this.getElByID(arr, curId)) {
+    if (needEl) {
+      const needInd = this.getIndByID(arr, curId);
+      arr.splice(needInd, 1);
+    }
   },
 
   checkIncludeByID(arr, id) {
@@ -59,12 +66,9 @@ const act = {
         numb = this.getRndItm(0, len);
         i--;
       } else {
-        rndArr.push(numb);
-
-        // if (j === 3 || j === 5 || j === 7) pageVal.reverse();
+        rndArr.push(arr[i]);
+        if (i % 2 === 0) rndArr.reverse();
       }
-
-      // const element = array[index];
     }
     return rndArr;
   },

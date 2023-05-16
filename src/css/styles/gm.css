@@ -58,7 +58,7 @@
 
 .gm-ans-err-txt {
   color: var(--clRd);
-} /**/
+}
 
 .gm-hdng {
   color: var(--clGrn);
@@ -138,12 +138,24 @@
   animation: gmCrdRtt 900ms linear;
 }
 
+.gmCrd.gmCrd-dsbl {
+  cursor: auto;
+  pointer-events: none;
+}
+
+.gmCrd.gmCrd-crctAns {
+  cursor: auto;
+  pointer-events: none;
+}
+
+
+
 @keyframes gmCrdRtt {
   0% {
     transform: rotateY(0deg);
     visibility: visible;
   }
-  30% {
+  15% {
     transform: rotateY(45deg);
     visibility: visible;
   }
@@ -159,15 +171,15 @@
     transform: rotateY(180deg);
     visibility: hidden;
   }
-  55% {
+  60% {
     transform: rotateY(225deg);
     visibility: hidden;
   }
-  60% {
+  70% {
     transform: rotateY(270deg);
     visibility: hidden;
   }
-  70% {
+  85% {
     transform: rotateY(315deg);
     visibility: visible;
   }
@@ -182,36 +194,36 @@
     transform: rotateY(0deg);
     visibility: visible;
   }
-  30% {
-    transform: rotateY(45deg);
+  15% {
+    transform: rotateY(-45deg);
     visibility: visible;
   }
   30% {
-    transform: rotateY(90deg);
+    transform: rotateY(-90deg);
     visibility: hidden;
   }
   40% {
-    transform: rotateY(135deg);
+    transform: rotateY(-135deg);
     visibility: hidden;
   }
   50% {
-    transform: rotateY(180deg);
-    visibility: hidden;
-  }
-  55% {
-    transform: rotateY(225deg);
+    transform: rotateY(-180deg);
     visibility: hidden;
   }
   60% {
-    transform: rotateY(270deg);
+    transform: rotateY(-225deg);
     visibility: hidden;
   }
   70% {
-    transform: rotateY(315deg);
+    transform: rotateY(-270deg);
+    visibility: hidden;
+  }
+  85% {
+    transform: rotateY(-315deg);
     visibility: visible;
   }
   100% {
-    transform: rotateY(360deg);
+    transform: rotateY(-360deg);
     visibility: visible;
   }
 }
@@ -226,11 +238,55 @@
   background-color: var(--clSkBl);
   border-radius: 2rem;
   transition: background-color var(--trnsTmX1) linear;
+
+  position: relative;
+  z-index: 1;
 }
 
 .gmCrd-rw.gmCrd-rw-gmMd {
   background-color: var(--clTmt);
 }
+
+.gmCrd-rw.gmCrd-rw-gmMd.gmCrd-rw-gmMd-crctAns,
+.gmCrd-rw.gmCrd-rw-gmMd.gmCrd-rw-gmMd-errAns {
+  position: relative;
+}
+
+.gmCrd-rw.gmCrd-rw-gmMd.gmCrd-rw-gmMd-crctAns {
+  background-color: var(--clGrn);
+}
+
+.gmCrd-rw.gmCrd-rw-gmMd.gmCrd-rw-gmMd-errAns {
+  background-color: var(--clRd);
+}
+
+.gmCrd-rw.gmCrd-rw-gmMd.gmCrd-rw-gmMd-crctAns::after,
+.gmCrd-rw.gmCrd-rw-gmMd.gmCrd-rw-gmMd-errAns::after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: var(--gmCrdAnsWdth);
+  height: var(--gmCrdAnsWdth);
+  left: calc(50% - (var(--gmCrdAnsWdth) / 2));
+  top: calc(50% - (var(--gmCrdAnsWdth) / 2));
+  background-color: var(--clLme);
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: .3;
+  border-radius: 50%;
+}
+
+.gmCrd-rw.gmCrd-rw-gmMd.gmCrd-rw-gmMd-crctAns::after {
+  background-image: url("./../../img/mn-img/dflt-img/correct.png");
+}
+
+.gmCrd-rw.gmCrd-rw-gmMd.gmCrd-rw-gmMd-errAns::after {
+  background-image: url("./../../img/mn-img/dflt-img/error.png");
+}
+
+
 
 .gmCrd-img-bx {
   width: 100%;

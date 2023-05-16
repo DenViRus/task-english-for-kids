@@ -15,6 +15,12 @@
   background-color: var(--clTmt);
 }
 
+.md.md-gmMd.md-gmMd-dsbl {
+  background-color: var(--clLghtGry);
+  box-shadow: 0.2rem 0.2rem .5rem var(--clGry);
+  cursor: auto;
+  pointer-events: none;
+}
 
 .md-bx {
   width: var(--mdBxWdth);
@@ -34,13 +40,16 @@
   left: 0;
   top: 0;
   border-radius: 2rem;
-  cursor: pointer;
   z-index: 2;
   transition: left var(--trnsTmX3) linear;
 }
 
 .md-tgl.md-tgl-gmMd {
   left: 11.5rem;
+}
+
+.md-tgl.md-tgl-gmMd.md-tgl-gmMd-dsbl {
+  background-color: var(--clGry);
 }
 
 .md-txt {
@@ -51,6 +60,10 @@
 
 .md-txt.md-txt-gmMd {
   animation: tgMdTxtGmMd var(--trnsTmX3) linear;
+}
+
+.md-txt.md-txt-gmMd.md-txt-gmMd-dsbl {
+  color: var(--clBlck);
 }
 
 @keyframes tgMdTxtGmMd {
@@ -84,4 +97,8 @@
 
 .md:hover .md-txt {
   color: var(--clGld);
+}
+
+.md:hover .md-txt.md-txt-gmMd.md-txt-gmMd-dsbl {
+  color: var(--clBlck);
 }

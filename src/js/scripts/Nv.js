@@ -21,10 +21,10 @@ export default class Nv {
       this.act.appEl(nvLstGmItm, nvLstGmItmTxt);
       this.act.appEl(this.nvLst, nvLstGmItm);
     }
-    const nvLstStItm = this.act.createElem('li', { class: 'nv-lst-itm nv-lst-st-itm', 'data-id': 'st' });
-    const nvLstStItmTxt = this.act.createElem('span', { class: 'hdng mn-stl nv-lst-itm-txt nv-lst-st-itm-txt' }, 'Statistics');
-    this.act.appEl(nvLstStItm, nvLstStItmTxt);
-    this.act.appEl(this.nvLst, nvLstStItm);
+    const nvLstScrItm = this.act.createElem('li', { class: 'nv-lst-itm nv-lst-scr-itm', 'data-id': 'scr' });
+    const nvLstScrItmTxt = this.act.createElem('span', { class: 'hdng mn-stl nv-lst-itm-txt nv-lst-scr-itm-txt' }, 'Score');
+    this.act.appEl(nvLstScrItm, nvLstScrItmTxt);
+    this.act.appEl(this.nvLst, nvLstScrItm);
     this.act.appEl(this.nv, this.nvLst);
     this.itmsArr = [...this.nvLst.querySelectorAll('.nv-lst-itm')];
     this.getItmActv(id);

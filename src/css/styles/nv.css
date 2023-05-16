@@ -25,7 +25,7 @@
 }
 
 .nv-lst-mnPg-itm,
-.nv-lst-st-itm {
+.nv-lst-scr-itm {
   margin-left: 2rem;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .nv-lst-mnPg-itm-txt,
-.nv-lst-st-itm-txt {
+.nv-lst-scr-itm-txt {
   color: var(--clWht);
 }
 
@@ -49,7 +49,7 @@
 }
 
 .nv-lst-mnPg-itm-txt:hover,
-.nv-lst-st-itm-txt:hover {
+.nv-lst-scr-itm-txt:hover {
   color: var(--clYlw);
   font-size: var(--nvLstItmTxtFZHv);
 }
@@ -72,7 +72,7 @@
 }
 
 .nv-lst-mnPg-itm-txt.itm-txt-actv::after,
-.nv-lst-st-itm-txt.itm-txt-actv::after {
+.nv-lst-scr-itm-txt.itm-txt-actv::after {
   background-color: var(--clWht);
 }
 
@@ -81,11 +81,11 @@
 }
 
 .nv-lst-mnPg-itm-txt:hover::after,
-.nv-lst-st-itm-txt:hover::after {
+.nv-lst-scr-itm-txt:hover::after {
   background-color: var(--clYlw);
 }
 
-.nv-lst-gm-itm-txt:hover::after {
+.nv-lscr-gm-itm-txt:hover::after {
   background-color: var(--clGld);
 }
 

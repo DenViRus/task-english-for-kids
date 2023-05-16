@@ -6,7 +6,6 @@ export default class MnPg {
     this.mnPg = null;
     this.mnPgHdng = null;
     this.mnPgContBx = null;
-
     this.mnPgCrdsArr = null;
   }
 

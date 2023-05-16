@@ -8,10 +8,16 @@
   transition: transform var(--trnsTmX3) linear, left var(--trnsTmX3) linear;
 }
 
+.brg.brg-dsbl {
+  cursor: auto;
+  pointer-events: none;
+}
+
 .brg.brg-actv {
   transform: rotate(360deg);
   left: 23rem;
 }
+
 
 .brg-bx {
 width: var(--brgBxWdth);
@@ -82,10 +88,21 @@ transition: background-color var(--trnsTmX3) linear;
 .brg-itm.brg-itm-gmMd::before,
 .brg-itm.brg-itm-gmMd::after {
   background-color: var(--clTmt);
+  box-shadow: 0.1rem 0.1rem 0.1rem var(--clGry);
+}
+
+.brg-itm.brg-itm-gmMd.brg-itm-gmMd-dsbl,
+.brg-itm.brg-itm-gmMd.brg-itm-gmMd-dsbl::before,
+.brg-itm.brg-itm-gmMd.brg-itm-gmMd-dsbl::after {
+  background-color: var(--clLghtGry);
 }
 
 .brg:hover {
   scale: 103%;
+}
+
+.brg.brg-actv.brg-actv-dsbl {
+  scale: 100%;
 }
 
 .brg:active {
@@ -98,6 +115,7 @@ transition: background-color var(--trnsTmX3) linear;
   background-color: var(--clGrn);
   box-shadow: 0.1rem 0.1rem 0.2rem var(--clBl);
 }
+
 .brg:hover .brg-itm.brg-itm-gmMd,
 .brg:hover .brg-itm.brg-itm-gmMd::before,
 .brg:hover .brg-itm.brg-itm-gmMd::after {

@@ -82,6 +82,15 @@
   --gmCrdBtnWdth: 3rem;
   --gmCrdBtnHght: 3rem;
 
+  --gmCrdAnsWdth: 90%;
+
+  /* ppp */
+  --pppBxWdth: 90%;
+  --pppClsBtnWdth: 5rem;
+  --pppClsBtnWdth: 5rem;
+  --pppAnsBxWdth: 50%;
+  --pppAnsHdngFZ: 3rem;
+
   /* footer */
   --ftrCtctBxWdth: 85%;
   --ftrCtctLnkFZ: 2rem;

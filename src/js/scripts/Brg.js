@@ -24,4 +24,9 @@ export default class Brg {
     this.brg.classList.toggle('brg-actv');
     this.brgItm.classList.toggle('brg-itm-actv');
   }
+
+  toggleBrgDsbl() {
+    this.brg.classList.toggle('brg-dsbl');
+    this.brgItm.classList.toggle('brg-itm-gmMd-dsbl');
+  }
 }

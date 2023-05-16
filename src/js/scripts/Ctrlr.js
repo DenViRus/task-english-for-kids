@@ -30,7 +30,7 @@ export default class Controller {
     this.act.appEl(this.bx, this.bxHdr, this.bxBrg, this.bxNv, this.bxMd, this.bxMn, this.bxFtr);
   }
 
-  brgLstnr1 = (e) => {
+  lstnr1 = (e) => {
     const trgt = e.target;
 
     if (trgt.closest('.brg')) {
@@ -38,10 +38,6 @@ export default class Controller {
       this.brg.toggleBrg();
       this.nv.toggleNv();
     }
-  };
-
-  mdLstnr1 = (e) => {
-    const trgt = e.target;
 
     if (trgt.closest('.md')) {
       e.preventDefault();
@@ -49,10 +45,6 @@ export default class Controller {
       this.brg.toggleBrgMd(this.md.mdTxt.textContent);
       this.mn.toggleMnMd(this.md.mdTxt.textContent);
     }
-  };
-
-  mnLstnr1 = (e) => {
-    const trgt = e.target;
 
     if (trgt.closest('.mnPgCrd')) {
       e.preventDefault();
@@ -62,37 +54,42 @@ export default class Controller {
     if (trgt.closest('.gm-strt-btn')) {
       e.preventDefault();
       this.mn.gm.gmStrtGm();
+      this.md.toggleMdDsbl();
+      this.brg.toggleBrgDsbl();
     }
 
     if (trgt.closest('.gmCrd') && !trgt.closest('.gmCrd-btn')) {
       e.preventDefault();
       this.mn.gm.getGmMdRct(this.md.mdTxt.textContent, trgt.closest('.gmCrd').id);
+
+      if (this.md.mdTxt.textContent === 'Play' && this.mn.gm.gmBtn.id === 'gmRptBtn') {
+        if (parseInt(this.mn.gm.gmAnsCrctTxt.textContent, 10) === 0 || parseInt(this.mn.gm.gmAnsErrTxt.textContent, 10) === 0) {
+          this.mn.replMnCont(this.mn.ppp.getPpp({
+            res: `${(parseInt(this.mn.gm.gmAnsCrctTxt.textContent, 10) === 0) ? 'wn' : 'ls'}`,
+            crctAns: `${this.mn.gm.gmCrdsDtArr.length - parseInt(this.mn.gm.gmAnsCrctTxt.textContent, 10)}`,
+            errAns: `${Math.floor(this.mn.gm.gmCrdsDtArr.length / 2) - parseInt(this.mn.gm.gmAnsErrTxt.textContent, 10)}`,
+          }), this.md.mdTxt.textContent);
+          this.md.toggleMdDsbl();
+          this.brg.toggleBrgDsbl();
+        }
+      }
     }
 
     if (trgt.closest('.gmCrd-btn')) {
       e.preventDefault();
       this.mn.gm.rttGmCrd(trgt.closest('.gmCrd').id);
     }
-  };
 
-  mnLstnr2 = (e) => {
-    const trgt = e.target;
-    const rltdTrgt = e.relatedTarget;
-
-    if (trgt.classList.contains('gmCrd-rw') && trgt.closest('.gmCrd-rtt') && !rltdTrgt.closest('.gmCrd-rtt')) {
+    if (trgt.closest('.gm-rpt-btn')) {
       e.preventDefault();
-      this.mn.gm.rttGmCrd(trgt.closest('.gmCrd-rtt').id);
-    } else if ((trgt.classList.contains('gm-cont-bx') || trgt.closest('.gm-cont-bx')) && (rltdTrgt.classList.contains('gmCrd-rw') && rltdTrgt.closest('.gmCrd'))) {
-      e.preventDefault();
-      this.mn.gm.checkRttGmCrd(rltdTrgt.closest('.gmCrd').id);
-    } else if ((trgt.classList.contains('gm-cont-bx') || trgt.closest('.gm-cont-bx')) && !rltdTrgt.closest('.gm-cont-bx')) {
-      e.preventDefault();
-      this.mn.gm.checkRttGmCrd();
+      this.mn.gm.rptWrd();
     }
-  };
 
-  nvLstnr1 = (e) => {
-    const trgt = e.target;
+    if (trgt.closest('.ppp-cls-btn')) {
+      e.preventDefault();
+      this.mn.replMnCont(this.mn.mnPg.getMnPg(), this.md.mdTxt.textContent);
+      this.nv.getItmActv(this.mn.mnCont.id);
+    }
 
     if (this.bxNv.classList.contains('nv-actv') && !trgt.closest('.nv') && !trgt.closest('.brg') && !trgt.closest('.md')) {
       e.preventDefault();
@@ -117,12 +114,26 @@ export default class Controller {
     }
   };
 
+  lstnr2 = (e) => {
+    const trgt = e.target;
+    const rltdTrgt = e.relatedTarget;
+
+    if (!rltdTrgt) return; // throw an error when switching to another window  )))
+    if (trgt.classList.contains('gmCrd-rw') && trgt.closest('.gmCrd-rtt') && !rltdTrgt.closest('.gmCrd-rtt')) {
+      e.preventDefault();
+      this.mn.gm.rttGmCrd(trgt.closest('.gmCrd-rtt').id);
+    } else if ((trgt.classList.contains('gm-cont-bx') || trgt.closest('.gm-cont-bx')) && (rltdTrgt.classList.contains('gmCrd-rw') && rltdTrgt.closest('.gmCrd'))) {
+      e.preventDefault();
+      this.mn.gm.checkRttGmCrd(rltdTrgt.closest('.gmCrd').id);
+    } else if ((trgt.classList.contains('gm-cont-bx') || trgt.closest('.gm-cont-bx')) && !rltdTrgt.closest('.gm-cont-bx')) {
+      e.preventDefault();
+      this.mn.gm.checkRttGmCrd();
+    }
+  };
+
   ctrlrControl() {
     this.start();
-    document.addEventListener('click', this.brgLstnr1);
-    document.addEventListener('click', this.mdLstnr1);
-    document.addEventListener('click', this.mnLstnr1);
-    document.addEventListener('click', this.nvLstnr1);
-    document.addEventListener('mouseout', this.mnLstnr2);
+    document.addEventListener('click', this.lstnr1);
+    document.addEventListener('mouseout', this.lstnr2);
   }
 }
