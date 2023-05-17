@@ -27,5 +27,3 @@ const ftr = new Ftr(act);
 
 const ctrlr = new Ctrlr(projBx, hdr, brg, nv, md, mn, ftr, act);
 ctrlr.ctrlrControl();
-
-console.log(window.innerWidth);
