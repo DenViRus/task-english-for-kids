@@ -1,4 +1,4 @@
-const act = {
+const action = {
   createElem(el, elAttr, cont = '') {
     const elem = document.createElement(el);
     for (const prop in elAttr) {
@@ -77,4 +77,4 @@ const act = {
     new Audio(url).play();
   },
 };
-export default act;
+export default action;

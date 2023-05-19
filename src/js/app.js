@@ -1,29 +1,28 @@
-import Ctrlr from './scripts/Ctrlr.js';
-import Hdr from './scripts/Hdr.js';
-import Brg from './scripts/Brg.js';
-import Nv from './scripts/Nv.js';
-import Md from './scripts/Md.js';
-import Mn from './scripts/Mn.js';
-import MnPg from './scripts/MnPg.js';
-import Gm from './scripts/Gm.js';
-import Ppp from './scripts/Ppp.js';
+import Controller from './scripts/Controller.js';
+import Header from './scripts/Header.js';
+import Burger from './scripts/Burger.js';
+import Navigation from './scripts/Navigation.js';
+import Mode from './scripts/Mode.js';
+import Main from './scripts/Main.js';
+import MainPage from './scripts/MainPage.js';
+import Game from './scripts/Game.js';
+import Popup from './scripts/Popup.js';
+import Footer from './scripts/Footer.js';
+import { projectData, defaultData } from './scripts/projectData.js';
+import action from './scripts/action.js';
 
-import Ftr from './scripts/Ftr.js';
-import { dt, dfltDt } from './scripts/dt.js';
-import act from './scripts/act.js';
+const projectBox = document.getElementById('projBx');
+const header = new Header(action);
+const burger = new Burger(action);
+const navigation = new Navigation(projectData, action);
+const mode = new Mode(action);
+const mainPage = new MainPage(projectData, action);
+const game = new Game(projectData, defaultData, action);
+const popup = new Popup(defaultData, action);
 
-const projBx = document.getElementById('projBx');
-const hdr = new Hdr(act);
-const brg = new Brg(act);
-const nv = new Nv(dt, act);
-const md = new Md(act);
-const mnPg = new MnPg(dt, act);
-const gm = new Gm(dt, dfltDt, act);
-const ppp = new Ppp(dfltDt, act);
+const main = new Main(mainPage, game, popup, action);
 
-const mn = new Mn(mnPg, gm, ppp, act);
+const footer = new Footer(action);
 
-const ftr = new Ftr(act);
-
-const ctrlr = new Ctrlr(projBx, hdr, brg, nv, md, mn, ftr, act);
-ctrlr.ctrlrControl();
+const controller = new Controller(projectBox, header, burger, navigation, mode, main, footer, action);
+controller.control();

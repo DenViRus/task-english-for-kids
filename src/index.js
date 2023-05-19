@@ -1,2 +1,2 @@
-import './css/mnStls.css';
+import './css/styles.css';
 import './js/app.js';

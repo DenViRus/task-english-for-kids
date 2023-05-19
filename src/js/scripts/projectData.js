@@ -151,7 +151,7 @@ import crctAud from '../../audio/dflt-aud/correct.mp3';
 import errImg from '../../img/mn-img/dflt-img/error.png';
 import errAud from '../../audio/dflt-aud/error.mp3';
 
-const dt = [
+const projectData = [
   {
     id: 'gameActionSetA',
     nm: 'Action (set A)',
@@ -658,7 +658,7 @@ const dt = [
   },
 ];
 
-const dfltDt = {
+const defaultData = {
   wnImg,
   wnAud,
   lsImg,
@@ -669,4 +669,4 @@ const dfltDt = {
   errAud,
 };
 
-export { dt, dfltDt };
+export { projectData, defaultData };

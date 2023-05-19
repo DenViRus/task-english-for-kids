@@ -1,16 +1,16 @@
 import logo from '../../img/ftr-img/pamLogo.png';
 
-export default class Ftr {
-  constructor(act) {
-    this.act = act;
-    this.ftr = null;
+export default class Footer {
+  constructor(action) {
+    this.action = action;
+    this.footerEl = null;
   }
 
-  getFtr() {
-    this.ftr = this.act.createElem('footer', { class: 'ftr', id: 'ftr' });
-    const ftrRw = this.act.createElem('div', { class: 'rw ftr-rw' });
-    const ftrCtctBx = this.act.createElem('div', { class: 'ftr-ctct-bx' });
-    const ftrUpsBx = this.act.createElem('div', { class: 'ftr-ups-bx' });
+  getFooterEl() {
+    this.footerEl = this.action.createElem('footer', { class: 'ftr', id: 'ftr' });
+    const ftrRw = this.action.createElem('div', { class: 'rw ftr-rw' });
+    const ftrCtctBx = this.action.createElem('div', { class: 'ftr-ctct-bx' });
+    const ftrUpsBx = this.action.createElem('div', { class: 'ftr-ups-bx' });
 
     const ftrCtctDt = [
       {
@@ -27,23 +27,23 @@ export default class Ftr {
       },
     ];
 
-    const ftrUpsLnk = this.act.createElem('a', {
+    const ftrUpsLnk = this.action.createElem('a', {
       class: 'hdng mn-stl ftr-ups-lnk', id: 'ftrUpsLnk', href: 'https://github.com/rolling-scopes-school/js-fe-course-en/tree/main/UpSkillMe', target: '_blank',
     });
-    const ftrUpsLnkImg = this.act.createElem('img', { class: 'ftr-ups-lnk-img', src: logo, alt: 'UpSkillMe logotype' });
+    const ftrUpsLnkImg = this.action.createElem('img', { class: 'ftr-ups-lnk-img', src: logo, alt: 'UpSkillMe logotype' });
 
     for (const dt of ftrCtctDt) {
-      const ftrCtctLnk = this.act.createElem('a', {
+      const ftrCtctLnk = this.action.createElem('a', {
         class: dt.class, id: dt.id, href: dt.href, target: '_blank',
       }, dt.cont);
-      this.act.appEl(ftrCtctBx, ftrCtctLnk);
+      this.action.appEl(ftrCtctBx, ftrCtctLnk);
     }
 
-    this.act.appEl(ftrUpsLnk, ftrUpsLnkImg);
-    this.act.appEl(ftrUpsBx, ftrUpsLnk);
+    this.action.appEl(ftrUpsLnk, ftrUpsLnkImg);
+    this.action.appEl(ftrUpsBx, ftrUpsLnk);
 
-    this.act.appEl(ftrRw, ftrCtctBx, ftrUpsBx);
-    this.act.appEl(this.ftr, ftrRw);
-    return this.ftr;
+    this.action.appEl(ftrRw, ftrCtctBx, ftrUpsBx);
+    this.action.appEl(this.footerEl, ftrRw);
+    return this.footerEl;
   }
 }
