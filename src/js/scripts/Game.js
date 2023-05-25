@@ -1,18 +1,14 @@
 export default class Game {
-  constructor(projectData, defaultData, action) {
-    this.projectData = projectData;
-    this.defaultData = defaultData;
+  constructor(score, action) {
+    this.score = score;
     this.action = action;
 
-    this.gameData = null;
     this.gameCardsDataArr = null;
-    this.gameEl = null;
     this.gameAnswersBox = null;
     this.gameAnswersCorrectText = null;
     this.gameAnswersErrorText = null;
     this.gameHeading = null;
     this.gameButton = null;
-    this.gameContentBox = null;
     this.gameCardsArr = null;
     this.gameCardsDataRandomArr = null;
     this.gameRandomCardData = null;
@@ -20,22 +16,21 @@ export default class Game {
 
   // UI logic
 
-  getGameEl(id) {
-    this.gameData = this.action.getElByID(this.projectData, id);
-    this.gameCardsDataArr = this.gameData.dt;
-    this.gameEl = this.action.createElem('div', { class: 'gm', id: this.gameData.id });
+  getGameEl(gameData) {
+    this.gameCardsDataArr = gameData.dt;
+    const gameEl = this.action.createElem('div', { class: 'gm', id: gameData.id });
     const gmRw = this.action.createElem('div', { class: 'gmRw' });
     const gmHdngBx = this.action.createElem('div', { class: 'gm-hdng-bx' });
-    this.gameHeading = this.action.createElem('h3', { class: 'hdng gm-stl gm-hdng' }, this.gameData.nm);
+    this.gameHeading = this.action.createElem('h3', { class: 'hdng gm-stl gm-hdng' }, gameData.nm);
     this.action.appEl(gmHdngBx, this.gameHeading);
-    this.gameContentBox = this.action.createElem('div', { class: 'gm-cont-bx' });
+    const gmCntntBx = this.action.createElem('div', { class: 'gm-cont-bx' });
     for (const el of this.gameCardsDataArr) {
-      this.action.appEl(this.gameContentBox, this.getGameCardEl(el));
+      this.action.appEl(gmCntntBx, this.getGameCardEl(el));
     }
-    this.action.appEl(gmRw, gmHdngBx, this.gameContentBox);
-    this.action.appEl(this.gameEl, gmRw);
-    this.gameCardsArr = [...this.gameContentBox.querySelectorAll('.gmCrd')];
-    return this.gameEl;
+    this.action.appEl(gmRw, gmHdngBx, gmCntntBx);
+    this.action.appEl(gameEl, gmRw);
+    this.gameCardsArr = [...gmCntntBx.querySelectorAll('.gmCrd')];
+    return gameEl;
   }
 
   getGameAnswersBoxEl() {
@@ -106,7 +101,7 @@ export default class Game {
     }
   }
 
-  showGameModeAction(md, id) {
+  showGameModeAction(dt, md, id) {
     if (md === 'Train') {
       this.playGameCardAudio(id);
     }
@@ -114,7 +109,7 @@ export default class Game {
       this.togglePause();
       if (this.gameCardsDataRandomArr && this.gameRandomCardData) {
         if (this.gameAnswersCorrectText.textContent > 0 && this.gameAnswersErrorText.textContent > 0) {
-          (this.gameRandomCardData.id === id) ? this.correctAction(id) : this.errorAction(id);
+          (this.gameRandomCardData.id === id) ? this.correctAction(dt, id) : this.errorAction(dt, id);
         }
       }
       this.togglePause();
@@ -188,22 +183,24 @@ export default class Game {
     this.gameRandomCardData = null;
   }
 
-  correctAction(id) {
+  correctAction(dt, id) {
     this.action.rmvElById(this.gameCardsDataRandomArr, id);
     this.action.getElByID(this.gameCardsArr, id).classList.remove('gmCrd-errAns');
     this.action.getElByID(this.gameCardsArr, id).querySelector('.gmCrd-rw').classList.remove('gmCrd-rw-gmMd-errAns');
     this.action.getElByID(this.gameCardsArr, id).classList.add('gmCrd-crctAns');
     this.action.getElByID(this.gameCardsArr, id).querySelector('.gmCrd-rw').classList.add('gmCrd-rw-gmMd-crctAns');
     this.gameAnswersCorrectText.textContent = parseInt(this.gameAnswersCorrectText.textContent, 10) - 1;
-    this.action.plyAud(this.defaultData.crctAud);
+    this.score.plusCorrectData(id);
+    this.action.plyAud(dt.crctAud);
     (parseInt(this.gameAnswersCorrectText.textContent, 10) > 0) ? this.playRandomCardAudio(this.gameCardsDataRandomArr) : this.finishGame();
   }
 
-  errorAction(id) {
+  errorAction(dt, id) {
     this.action.getElByID(this.gameCardsArr, id).classList.add('gmCrd-errAns');
     this.action.getElByID(this.gameCardsArr, id).querySelector('.gmCrd-rw').classList.add('gmCrd-rw-gmMd-errAns');
     this.gameAnswersErrorText.textContent = parseInt(this.gameAnswersErrorText.textContent, 10) - 1;
-    this.action.plyAud(this.defaultData.errAud);
+    this.score.plusErrorData(id);
+    this.action.plyAud(dt.errAud);
     if (parseInt(this.gameAnswersErrorText.textContent, 10) === 0) this.finishGame();
   }
 }

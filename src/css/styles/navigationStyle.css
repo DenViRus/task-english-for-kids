@@ -85,7 +85,7 @@
   background-color: var(--clYlw);
 }
 
-.nv-lscr-gm-itm-txt:hover::after {
+.nv-lst-gm-itm-txt:hover::after {
   background-color: var(--clGld);
 }
 

@@ -2,7 +2,7 @@
 :root {
   --mnFml: 'IBMPlexSans', sans-serif;
   --gmFml: 'IBMPlexSerif', serif;
-  --stFml: 'IBMPlexMono', monospace;
+  --scrFml: 'IBMPlexMono', monospace;
 
   --clBlck: rgb(0, 0, 0);
   --clNvBlk: rgb(0, 0, 0, .7);
@@ -29,6 +29,16 @@
   --clVlt: rgb(238, 130, 238);
 
   --rwWdth: 130rem;
+  --cntntHdngFZ: 3rem;
+
+  --crdWdth: 23%;
+  --crdHght: 45%;
+  --crdFZ: 2.5rem;
+  --crdBtnWdth: 3rem;
+  --crdAnsWdth: 90%;
+
+  --btnFZ: 2rem;
+  --btnAftWdth: 3rem;
 
   /* header */
   --hdrHdngFZ: 4rem;
@@ -51,45 +61,29 @@
   /* mode */
   --mdBxWdth: 15rem;
   --mdBxHght: 3.5rem;
-
   --mdTglWdth: 3.5rem;
   --mdTglHght: 3.5rem;
-
   --mdTxtFZ: 3rem;
 
 
   /* main */
   --mnHdngFZ: 3.5rem;
 
-  /* mnPg */
-  --mnPgHdngFZ: 3rem;
-  --mnPgCrdWdth: 23%;
-  --mnPgCrdHght: 45%;
-  --mnPgCrdFZ: 2.5rem;
-
   /* gm */
-  --gmAnsBxWdth: 20rem;
-  --gmAnsHdngFZ: 2rem;
-  --gmHdngFZ: 3rem;
-
-  --gmBtnFZ: 2rem;
-  --gmBtnWdth: 3rem;
-  --gmBtnHght: 3rem;
-
-  --gmCrdWdth: 23%;
-  --gmCrdHght: 45%;
-  --gmCrdHdngFZ: 2.5rem;
-  --gmCrdBtnWdth: 3rem;
-  --gmCrdBtnHght: 3rem;
-
-  --gmCrdAnsWdth: 90%;
+  --ansBxWdth: 20rem;
+  --ansHdngFZ: 2rem;
 
   /* ppp */
   --pppBxWdth: 90%;
   --pppClsBtnWdth: 5rem;
-  --pppClsBtnWdth: 5rem;
   --pppAnsBxWdth: 50%;
   --pppAnsHdngFZ: 3rem;
+
+
+  /* score */
+  --tblHdrFZ: 2.5rem;
+  --tblBdFZ: 2rem;
+
 
   /* footer */
   --ftrCtctBxWdth: 85%;
@@ -131,4 +125,8 @@
 
 .gm-stl {
   font-family: var(--gmFml);
+}
+
+.scr-stl {
+  font-family: var(--scrFml);
 }

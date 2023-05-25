@@ -3,11 +3,10 @@ import logo from '../../img/ftr-img/pamLogo.png';
 export default class Footer {
   constructor(action) {
     this.action = action;
-    this.footerEl = null;
   }
 
   getFooterEl() {
-    this.footerEl = this.action.createElem('footer', { class: 'ftr', id: 'ftr' });
+    const ftrEl = this.action.createElem('footer', { class: 'ftr', id: 'ftr' });
     const ftrRw = this.action.createElem('div', { class: 'rw ftr-rw' });
     const ftrCtctBx = this.action.createElem('div', { class: 'ftr-ctct-bx' });
     const ftrUpsBx = this.action.createElem('div', { class: 'ftr-ups-bx' });
@@ -43,7 +42,7 @@ export default class Footer {
     this.action.appEl(ftrUpsBx, ftrUpsLnk);
 
     this.action.appEl(ftrRw, ftrCtctBx, ftrUpsBx);
-    this.action.appEl(this.footerEl, ftrRw);
-    return this.footerEl;
+    this.action.appEl(ftrEl, ftrRw);
+    return ftrEl;
   }
 }

@@ -11,7 +11,7 @@
 
 .mnPg-hdng {
   color: var(--clGrn);
-  font-size: var(--mnPgHdngFZ);
+  font-size: var(--cntntHdngFZ);
   text-align: center;
   transition: color var(--trnsTmX2) linear;
 }
@@ -32,8 +32,8 @@
 
 /* card */
 .mnPgCrd {
-  width: var(--mnPgCrdWdth);
-  height: var(--mnPgCrdHght);
+  width: var(--crdWdth);
+  height: var(--crdHght);
   border-radius: 2rem;
   box-shadow: 0.2rem 0.2rem 0.5rem var(--clBl);
   transition: scale var(--trnsTmX1) linear, box-shadow var(--trnsTmX1) linear;
@@ -78,7 +78,7 @@
 
 .mnPgCrd-hdng,
 .mnPgCrd-prg {
-  font-size: var(--mnPgCrdFZ);
+  font-size: var(--crdFZ);
   text-align: center;
   color: var(--clSlvr);
 }

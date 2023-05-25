@@ -1,20 +1,17 @@
 export default class Popup {
-  constructor(defaultData, action) {
-    this.defaultData = defaultData;
+  constructor(action) {
     this.action = action;
-
-    this.popupEl = null;
   }
 
-  getPopupEl({ res, crctAns, errAns }) {
-    this.popupEl = this.action.createElem('div', { class: 'ppp', id: 'ppp' });
+  getPopupEl(dt, { res, crctAns, errAns }) {
+    const pppEl = this.action.createElem('div', { class: 'ppp', id: 'ppp' });
     const pppBx = this.action.createElem('div', { class: 'pppBx' });
-    this.popupClsBtn = this.action.createElem('button', { class: 'ppp-cls-btn', type: 'button' });
+    const pppClsBtn = this.action.createElem('button', { class: 'ppp-cls-btn', type: 'button' });
     const pppImgBx = this.action.createElem('div', { class: 'ppp-img-bx' });
 
-    const img = (res === 'wn') ? this.defaultData.wnImg : this.defaultData.lsImg;
+    const img = (res === 'wn') ? dt.wnImg : dt.lsImg;
     const txt = (res === 'wn') ? 'win' : 'lose';
-    const aud = (res === 'wn') ? this.defaultData.wnAud : this.defaultData.lsAud;
+    const aud = (res === 'wn') ? dt.wnAud : dt.lsAud;
 
     const pppImg = this.action.createElem('img', { class: 'ppp-img', src: img, alt: `${txt} image` });
     const pppAnsBx = this.action.createElem('div', { class: 'ppp-ans-bx' });
@@ -29,9 +26,9 @@ export default class Popup {
     this.action.appEl(pppAnsErrBx, pppAnsErrHdng, pppAnsErrTxt);
     this.action.appEl(pppImgBx, pppImg);
     this.action.appEl(pppAnsBx, pppAnsCrctBx, pppAnsErrBx);
-    this.action.appEl(pppBx, this.popupClsBtn, pppImgBx, pppAnsBx);
-    this.action.appEl(this.popupEl, pppBx);
+    this.action.appEl(pppBx, pppClsBtn, pppImgBx, pppAnsBx);
+    this.action.appEl(pppEl, pppBx);
     this.action.plyAud(aud);
-    return this.popupEl;
+    return pppEl;
   }
 }

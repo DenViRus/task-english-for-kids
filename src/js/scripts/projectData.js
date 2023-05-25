@@ -265,7 +265,7 @@ const projectData = [
       {
         id: 'actionSetBSKip',
         en: 'skip',
-        ru: 'пропускать, прыгать',
+        ru: 'прыгать',
         img: actionSetBSKipImg,
         aud: actionSetBSKipAud,
       },
@@ -517,7 +517,7 @@ const projectData = [
       {
         id: 'clothesSetBTshirt',
         en: 't-shirt',
-        translation: 'футболка',
+        ru: 'футболка',
         img: clothesSetBTshirtImg,
         aud: clothesSetBTshirtAud,
       },

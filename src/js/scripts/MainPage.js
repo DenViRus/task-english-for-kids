@@ -1,26 +1,23 @@
 export default class MainPage {
-  constructor(projectData, action) {
-    this.projectData = projectData;
+  constructor(action) {
     this.action = action;
 
-    this.mainPageEl = null;
     this.mainPageHeading = null;
-    this.mainPageContentBox = null;
     this.mainPageCardsArr = null;
   }
 
-  getMainPageEl() {
-    this.mainPageEl = this.action.createElem('div', { class: 'mnPg', id: 'mnPg' });
+  getMainPageEl(dt) {
+    const mnPgEl = this.action.createElem('div', { class: 'mnPg', id: 'mnPg' });
     const mnPgRw = this.action.createElem('div', { class: 'mnPg-rw' });
     this.mainPageHeading = this.action.createElem('h3', { class: 'hdng mn-stl mnPg-hdng' }, 'Main Page');
-    this.mainPageContentBox = this.action.createElem('div', { class: 'mnPg-cont-bx' });
-    for (const el of this.projectData) {
-      this.action.appEl(this.mainPageContentBox, this.getMainPageCard(el));
+    const mnPgCntntBx = this.action.createElem('div', { class: 'mnPg-cont-bx' });
+    for (const el of dt) {
+      this.action.appEl(mnPgCntntBx, this.getMainPageCard(el));
     }
-    this.action.appEl(mnPgRw, this.mainPageHeading, this.mainPageContentBox);
-    this.action.appEl(this.mainPageEl, mnPgRw);
-    this.mainPageCardsArr = [...this.mainPageContentBox.querySelectorAll('.mnPgCrd')];
-    return this.mainPageEl;
+    this.action.appEl(mnPgRw, this.mainPageHeading, mnPgCntntBx);
+    this.action.appEl(mnPgEl, mnPgRw);
+    this.mainPageCardsArr = [...mnPgCntntBx.querySelectorAll('.mnPgCrd')];
+    return mnPgEl;
   }
 
   getMainPageCard(dt) {

@@ -29,7 +29,7 @@
 
 .gm-ans-crct-bx,
 .gm-ans-err-bx {
-  width: var(--gmAnsBxWdth);
+  width: var(--ansBxWdth);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,7 +39,7 @@
 .gm-ans-err-hdng,
 .gm-ans-err-txt,
 .gm-ans-crct-txt {
-  font-size: var(--gmAnsHdngFZ);
+  font-size: var(--ansHdngFZ);
 }
 
 .gm-ans-crct-hdng,
@@ -62,7 +62,7 @@
 
 .gm-hdng {
   color: var(--clGrn);
-  font-size: var(--gmHdngFZ);
+  font-size: var(--cntntHdngFZ);
   text-align: center;
   transition: color var(--trnsTmX2) linear;
 }
@@ -73,7 +73,7 @@
 
 .gm-strt-btn,
 .gm-rpt-btn {
-  font-size: var(--gmBtnFZ);
+  font-size: var(--btnFZ);
   color: var(--clSlvr);
   position: absolute;
   right: 1rem;
@@ -95,8 +95,8 @@
 .gm-strt-btn::after,
 .gm-rpt-btn::after {
   content: "";
-  width: var(--gmBtnWdth);
-  height: var(--gmBtnHght);
+  width: var(--btnAftWdth);
+  height: var(--btnAftWdth);
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -123,8 +123,8 @@
 /* card */
 
 .gmCrd {
-  width: var(--gmCrdWdth);
-  height: var(--gmCrdHght);
+  width: var(--crdWdth);
+  height: var(--crdHght);
   border-radius: 2rem;
   box-shadow: 0.2rem 0.2rem 0.5rem var(--clBl);
 
@@ -266,10 +266,10 @@
   display: block;
   position: absolute;
   z-index: 1;
-  width: var(--gmCrdAnsWdth);
-  height: var(--gmCrdAnsWdth);
-  left: calc(50% - (var(--gmCrdAnsWdth) / 2));
-  top: calc(50% - (var(--gmCrdAnsWdth) / 2));
+  width: var(--crdAnsWdth);
+  height: var(--crdAnsWdth);
+  left: calc(50% - (var(--crdAnsWdth) / 2));
+  top: calc(50% - (var(--crdAnsWdth) / 2));
   background-color: var(--clLme);
   background-position: center;
   background-size: 100%;
@@ -322,7 +322,7 @@
 }
 
 .gmCrd-hdng {
-  font-size: var(--gmCrdHdngFZ);
+  font-size: var(--crdFZ);
   color: var(--clSlvr);
   text-align: center;
   padding: 0.5rem;
@@ -330,8 +330,8 @@
 
 .gmCrd-btn {
   background-color: var(--clBl);
-  width: var(--gmCrdBtnWdth);
-  height: var(--gmCrdBtnHght);
+  width: var(--crdBtnWdth);
+  height: var(--crdBtnWdth);
   background-image: url("./../../icon/mn-icon/rptSlvr.png");
   background-position: center;
   background-size: 95%;

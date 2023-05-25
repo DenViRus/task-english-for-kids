@@ -58,6 +58,14 @@ const action = {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   },
 
+  srtArr(arr, val) {
+    arr.sort((a, b) => {
+      if (a[val] < b[val]) return -1;
+      if (a[val] > b[val]) return 1;
+      return 0;
+    });
+  },
+
   getRndArr(arr) {
     const rndArr = [];
     for (let i = 0, len = arr.length; i < len; i++) {
@@ -75,6 +83,18 @@ const action = {
 
   plyAud(url) {
     new Audio(url).play();
+  },
+
+  setStrgDt(key, val) {
+    localStorage.setItem(key, JSON.stringify(val));
+  },
+
+  getStrgDt(key) {
+    return JSON.parse(localStorage.getItem(key));
+  },
+
+  rmvStrgDt(key) {
+    localStorage.removeItem(key);
   },
 };
 export default action;
