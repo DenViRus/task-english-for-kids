@@ -112,7 +112,7 @@ export default class Game {
       this.togglePause();
       if (this.gameCardsDataRandomArr && this.gameRandomCardData) {
         if (this.gameAnswersCorrectText.textContent > 0 && this.gameAnswersErrorText.textContent > 0) {
-          (this.gameRandomCardData.id === id) ? this.correctAction(dt, id) : this.errorAction(dt, id);
+          (this.gameRandomCardData.id === id) ? this.correctAction(dt, this.gameRandomCardData.id) : this.errorAction(dt, this.gameRandomCardData.id);
         }
       }
       this.togglePause();
