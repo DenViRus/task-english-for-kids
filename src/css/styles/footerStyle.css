@@ -14,12 +14,10 @@
   width: var(--ftrCtctBxWdth);
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.ftr-ctct-phn-lnk,
-.ftr-ctct-tlg-lnk,
-.ftr-ctct-ml-lnk,
-.ftr-ctct-hb-lnk {
+.ftr-ctct-lnk {
   font-size: var(--ftrCtctLnkFZ);
   color: var(--clSlvr);
   display: flex;
@@ -27,15 +25,12 @@
   cursor: pointer;
 }
 
-.ftr-ctct-phn-lnk::before,
-.ftr-ctct-tlg-lnk::before,
-.ftr-ctct-ml-lnk::before,
-.ftr-ctct-hb-lnk::before {
-  content: '';
+.ftr-ctct-lnk::before {
+  content: "";
   width: var(--ftrCtctLnkBfrWdth);
   height: var(--ftrCtctLnkBfrHght);
   background-size: var(--ftrCtctLnkBfrWdth) var(--ftrCtctLnkBfrHght);
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .ftr-ctct-phn-lnk::before {
@@ -56,16 +51,14 @@
 
 .ftr-ups-bx {
   width: var(--ftrUpsBxWdth);
+  min-width: var(--ftrUpsBxMinWdth);
 }
 
 .ftr-ups-lnk {
   cursor: pointer;
 }
 
-.ftr-ctct-phn-lnk:hover,
-.ftr-ctct-tlg-lnk:hover,
-.ftr-ctct-ml-lnk:hover,
-.ftr-ctct-hb-lnk:hover {
+.ftr-ctct-lnk:hover {
   color: var(--clGld);
   scale: 1.01;
 }
@@ -84,4 +77,34 @@
 
 .ftr-ctct-hb-lnk:hover::before {
   background-image: url(./../../icon/ftr-icon/githubGold.png);
+}
+
+@media (max-width: 999px) {
+  .ftr-rw {
+    padding: 0.5rem;
+    justify-content: space-around;
+  }
+
+  .ftr-ctct-bx {
+    min-width: var(--ftrCtctBxMnWdth);
+  }
+
+  .ftr-ctct-lnk {
+    width: var(--ftrCtctLnkWdth);
+    min-width: var(--ftrCtctLnkMnWdth);
+  }
+}
+
+@media (max-width: 399px) {
+  .ftr-rw {
+    flex-direction: column;
+  }
+  
+  .ftr-ctct-bx {
+    margin-bottom: 1rem;
+  }
+
+  .ftr-ctct-lnk {
+    justify-content: center;
+  }
 }

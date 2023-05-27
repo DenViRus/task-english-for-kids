@@ -13,16 +13,16 @@ export default class Footer {
 
     const ftrCtctDt = [
       {
-        class: 'hdng mn-stl ftr-ctct-phn-lnk', id: 'ftrCtctPhnLnk', href: 'tel:+381629381067', cont: '+(381)629381067',
+        class: 'hdng mn-stl ftr-ctct-lnk ftr-ctct-phn-lnk', id: 'ftrCtctPhnLnk', href: 'tel:+381629381067', cont: '+(381)629381067',
       },
       {
-        class: 'hdng mn-stl ftr-ctct-tlg-lnk', id: 'ftrCtctTlgLnk', href: 'https://t.me/DenViRus83', cont: '@Denis Efremenko',
+        class: 'hdng mn-stl ftr-ctct-lnk ftr-ctct-tlg-lnk', id: 'ftrCtctTlgLnk', href: 'https://t.me/DenViRus83', cont: '@Denis Efremenko',
       },
       {
-        class: 'hdng mn-stl ftr-ctct-ml-lnk', id: 'ftrCtctMlLnk', href: 'mailto:serb.efremenko@gmail.com', cont: 'serb.efremenko@gmail.com',
+        class: 'hdng mn-stl ftr-ctct-lnk ftr-ctct-ml-lnk', id: 'ftrCtctMlLnk', href: 'mailto:serb.efremenko@gmail.com', cont: 'serb.efremenko@gmail.com',
       },
       {
-        class: 'hdng mn-stl ftr-ctct-hb-lnk', id: 'ftrCtctHbLnk', href: 'https://github.com/DenViRus', cont: 'DenViRus',
+        class: 'hdng mn-stl ftr-ctct-lnk ftr-ctct-hb-lnk', id: 'ftrCtctHbLnk', href: 'https://github.com/DenViRus', cont: 'DenViRus',
       },
     ];
 

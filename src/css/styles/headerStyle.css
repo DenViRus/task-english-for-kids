@@ -11,5 +11,11 @@
   font-size: var(--hdrHdngFZ);
   color: var(--clBl);
   text-align: center;
-  letter-spacing: .03em;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 999px) {
+  .hdr-rw {
+    padding: 0.5rem;
+  }
 }

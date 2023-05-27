@@ -7,6 +7,7 @@ export default class Game {
     this.gameAnswersBox = null;
     this.gameAnswersCorrectText = null;
     this.gameAnswersErrorText = null;
+    this.gameHeadingBox = null;
     this.gameHeading = null;
     this.gameButton = null;
     this.gameCardsArr = null;
@@ -20,14 +21,14 @@ export default class Game {
     this.gameCardsDataArr = gameData.dt;
     const gameEl = this.action.createElem('div', { class: 'gm', id: gameData.id });
     const gmRw = this.action.createElem('div', { class: 'gmRw' });
-    const gmHdngBx = this.action.createElem('div', { class: 'gm-hdng-bx' });
+    this.gameHeadingBox = this.action.createElem('div', { class: 'gm-hdng-bx' });
     this.gameHeading = this.action.createElem('h3', { class: 'hdng gm-stl gm-hdng' }, gameData.nm);
-    this.action.appEl(gmHdngBx, this.gameHeading);
+    this.action.appEl(this.gameHeadingBox, this.gameHeading);
     const gmCntntBx = this.action.createElem('div', { class: 'gm-cont-bx' });
     for (const el of this.gameCardsDataArr) {
       this.action.appEl(gmCntntBx, this.getGameCardEl(el));
     }
-    this.action.appEl(gmRw, gmHdngBx, gmCntntBx);
+    this.action.appEl(gmRw, this.gameHeadingBox, gmCntntBx);
     this.action.appEl(gameEl, gmRw);
     this.gameCardsArr = [...gmCntntBx.querySelectorAll('.gmCrd')];
     return gameEl;
@@ -73,6 +74,7 @@ export default class Game {
 
   toggleGameMode(md) {
     if (md === 'Play') {
+      this.gameHeadingBox.classList.add('gm-hdng-bx-gmMd');
       this.gameHeading.classList.add('gm-hdng-gmMd');
       this.action.beforEl(this.gameHeading, this.getGameAnswersBoxEl());
       this.action.afterEl(this.gameHeading, this.getGameStartButtonEl());
@@ -83,6 +85,7 @@ export default class Game {
         if (el.querySelector('.gmCrd-cont-bx')) el.querySelector('.gmCrd-cont-bx').remove();
       });
     } else if (md === 'Train') {
+      this.gameHeadingBox.classList.remove('gm-hdng-bx-gmMd');
       this.gameHeading.classList.remove('gm-hdng-gmMd');
       if (this.gameAnswersBox && this.gameButton) {
         this.gameAnswersBox.remove();

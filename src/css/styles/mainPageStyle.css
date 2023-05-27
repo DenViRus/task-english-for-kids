@@ -21,13 +21,22 @@
 }
 
 .mnPg-cont-bx {
+  height: 0;
   flex-grow: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   column-gap: 2%;
-  row-gap: 3%;
+  row-gap: 2%;
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+
+  overflow: auto;
+}
+
+.mnPg-cont-bx::-webkit-scrollbar {
+  width: 0;
 }
 
 /* card */
@@ -54,8 +63,9 @@
 
 .mnPgCrd-img-bx {
   width: 100%;
-  border-radius: 2rem 2rem 0 0;
+  height: 0;
   flex-grow: 1;
+  border-radius: 2rem 2rem 0 0;
 }
 
 .mnPgCrd-img {
@@ -108,4 +118,17 @@
 .mnPgCrd:active {
   scale: 100%;
   box-shadow: 0.2rem 0.2rem 0.5rem var(--clBl);
+}
+
+@media (max-width: 1299px) {
+  .mnPg-cont-bx {
+    column-gap: 3%;
+    row-gap: 3%;
+  }
+}
+
+@media (max-width: 399px) {
+  .mnPgCrd-rw {
+    padding: 0.3rem;
+  }
 }

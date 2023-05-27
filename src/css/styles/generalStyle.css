@@ -1,32 +1,25 @@
-
 :root {
-  --mnFml: 'IBMPlexSans', sans-serif;
-  --gmFml: 'IBMPlexSerif', serif;
-  --scrFml: 'IBMPlexMono', monospace;
+  --mnFml: "IBMPlexSans", sans-serif;
+  --gmFml: "IBMPlexSerif", serif;
+  --scrFml: "IBMPlexMono", monospace;
 
   --clBlck: rgb(0, 0, 0);
-  --clNvBlk: rgb(0, 0, 0, .7);
+  --clNvBlk: rgb(0, 0, 0, 0.7);
   --clWht: rgb(255, 255, 255);
   --clGry: rgb(128, 128, 128);
   --clLghtGry: rgb(211, 211, 211);
   --clGld: rgb(255, 215, 0);
   --clYlw: rgb(255, 255, 0);
-  --clYlwGrn: rgb(173, 255, 47);
   --clSlvr: rgb(192, 192, 192);
   --clDrkBl: rgb(0, 0, 139);
   --clBl: rgb(0, 0, 255);
-  --clTrqs: rgb(64, 224, 208);
   --clSkBl: rgb(135, 206, 235);
-  --clLghtBl: rgb(173, 216, 230);
   --clDrkGrn: rgb(0, 100, 0);
   --clGrn: rgb(0, 128, 0);
   --clSeGrn: rgb(46, 139, 87);
   --clLme: rgb(0, 255, 0);
-  --clLghtGrn: rgb(144, 238, 144);
   --clRd: rgb(255, 0, 0);
   --clTmt: rgb(255, 99, 71);
-  --clOrng: rgb(255, 165, 0);
-  --clVlt: rgb(238, 130, 238);
 
   --rwWdth: 130rem;
   --cntntHdngFZ: 3rem;
@@ -43,13 +36,13 @@
   /* header */
   --hdrHdngFZ: 4rem;
 
- /* burger */
+  /* burger */
   --brgBxWdth: 5.5rem;
   --brgBxHght: 4.5rem;
 
-  --trnsTm: .1s;
-  --trnsTmX2: .2s;
-  --trnsTmX3: .3s;
+  --trnsTm: 0.1s;
+  --trnsTmX2: 0.2s;
+  --trnsTmX3: 0.3s;
 
   /* nav */
   --nvWdth: 30rem;
@@ -65,7 +58,6 @@
   --mdTglHght: 3.5rem;
   --mdTxtFZ: 3rem;
 
-
   /* main */
   --mnHdngFZ: 3.5rem;
 
@@ -79,23 +71,22 @@
   --pppAnsBxWdth: 50%;
   --pppAnsHdngFZ: 3rem;
 
-
   /* score */
   --tblHdrFZ: 2.5rem;
   --tblBdFZ: 2rem;
-
 
   /* footer */
   --ftrCtctBxWdth: 85%;
   --ftrCtctLnkFZ: 2rem;
   --ftrCtctLnkBfrWdth: 3rem;
   --ftrCtctLnkBfrHght: 3rem;
-
   --ftrUpsBxWdth: 10%;
+  --ftrUpsBxMinWdth: 10rem;
 }
 
 .proj-bx {
-  width: calc(100vw);
+  width: 100vw;
+  min-width: 30rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -108,7 +99,6 @@
   width: var(--rwWdth);
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .hdng {
@@ -129,4 +119,193 @@
 
 .scr-stl {
   font-family: var(--scrFml);
+}
+
+@media (max-width: 1299px) {
+  :root {
+    --mxRwWdth: 128rem;
+    --mnRwWdth: 98rem;
+    --rwWdth: calc(100% - 2rem);
+
+    /* header */
+    --hdrHdngFZ: 3.5rem;
+
+    /* burger */
+    --brgBxWdth: 5rem;
+    --brgBxHght: 4rem;
+
+    /* mode */
+    --mdTxtFZ: 2.5rem;
+    --mdBxWdth: 12rem;
+    --mdBxHght: 3rem;
+    --mdTglWdth: 3rem;
+    --mdTglHght: 3rem;
+
+    /* main */
+    --mnHdngFZ: 3rem;
+
+    /* gm */
+    --cntntHdngFZ: 3rem;
+    --crdWdth: 30rem;
+    --crdHght: 28rem;
+    --crdFZ: 2rem;
+
+    /* score */
+    --tblHdrFZ: 2rem;
+    --tblBdFZ: 2rem;
+
+    /* footer */
+    --ftrCtctLnkFZ: 1.6rem;
+    --ftrCtctLnkBfrWdth: 2.5rem;
+    --ftrCtctLnkBfrHght: 2.5rem;
+  }
+
+  .rw {
+    max-width: var(--mxRwWdth);
+    min-width: var(--mnRwWdth);
+  }
+}
+
+@media (max-width: 999px) {
+  :root {
+    --mxRwWdth: 98rem;
+    --mnRwWdth: 68rem;
+    --rwWdth: calc(100% - 2rem);
+
+    /* header */
+    --hdrHdngFZ: 3rem;
+
+    /* burger */
+    --brgBxWdth: 4.5rem;
+    --brgBxHght: 3.5rem;
+
+    /* mode */
+    --mdTxtFZ: 2rem;
+    --mdBxWdth: 10rem;
+    --mdBxHght: 2.5rem;
+    --mdTglWdth: 2.5rem;
+    --mdTglHght: 2.5rem;
+
+    /* main */
+    --mnHdngFZ: 2.5rem;
+
+    /* gm */
+    --cntntHdngFZ: 2.5rem;
+
+    --crdWdth: 32rem;
+    --crdHght: 30rem;
+    --btnAftWdth: 2.5rem;
+
+    /* ppp */
+    --pppBxWdth: 60rem;
+    --pppImgBxWdth: 50rem;
+    --pppAnsHdngFZ: 2.5rem;
+    --pppClsBtnWdth: 4rem;
+
+    /* score */
+    --tblHdrFZ: 1.5rem;
+    --tblBdFZ: 1.5rem;
+
+    /* footer */
+    --ftrCtctBxWdth: 60%;
+    --ftrCtctBxMnWdth: 53rem;
+    --ftrUpsBxWdth: 10rem;
+    --ftrCtctLnkWdth: 45%;
+    --ftrCtctLnkMnWdth: 26rem;
+  }
+}
+
+@media (max-width: 699px) {
+  :root {
+    --mxRwWdth: 68rem;
+    --mnRwWdth: 38rem;
+    --rwWdth: calc(100% - 2rem);
+
+    /* header */
+    --hdrHdngFZ: 2.5rem;
+
+    /* burger */
+    --brgBxWdth: 4rem;
+    --brgBxHght: 3rem;
+
+    /* mode */
+    --mdTxtFZ: 1.5rem;
+    --mdBxWdth: 8rem;
+    --mdBxHght: 2rem;
+    --mdTglWdth: 2rem;
+    --mdTglHght: 2rem;
+
+    /* nav */
+    --nvLstHght: 40%;
+    --nvLstItmHght: 6%;
+    --nvLstItmTxtFZ: 2rem;
+    --nvLstItmTxtFZHv: 2.1rem;
+
+    /* main */
+    --mnHdngFZ: 2rem;
+
+    /* gm */
+    --cntntHdngFZ: 2rem;
+    --crdWdth: 37rem;
+    --crdHght: 33rem;
+    --btnFZ: 1.5rem;
+    --btnAftWdth: 2rem;
+    --ansBxWdth: 14rem;
+    --ansHdngFZ: 1.5rem;
+
+    /* ppp */
+    --pppBxWdth: 35rem;
+    --pppImgBxWdth: 27rem;
+    --pppAnsBxWdth: 100%;
+    --pppAnsHdngFZ: 2rem;
+    --pppClsBtnWdth: 3rem;
+
+    /* score */
+    --tblHdrFZ: 0;
+    --tblBdFZ: 1rem;
+
+    /* footer */
+    --ftrCtctBxWdth: 60%;
+    --ftrCtctBxMnWdth: 25rem;
+    --ftrUpsBxWdth: 15rem;
+    --ftrCtctLnkWdth: 100%;
+    --ftrCtctLnkMnWdth: 25rem;
+  }
+}
+
+@media (max-width: 399px) {
+  :root {
+    --mxRwWdth: 38rem;
+    --mnRwWdth: 30rem;
+    --rwWdth: calc(100% - 2rem);
+
+    /* header */
+    --hdrHdngFZ: 2rem;
+
+    /* burger */
+    --brgBxWdth: 3.5rem;
+    --brgBxHght: 2.5rem;
+
+    /* mode */
+    --mdTxtFZ: 1rem;
+    --mdBxWdth: 6rem;
+    --mdBxHght: 1.5rem;
+    --mdTglWdth: 1.5rem;
+    --mdTglHght: 1.5rem;
+
+    /* gm */
+    --crdWdth: 28rem;
+    --crdHght: 26rem;
+    --btnFZ: 1rem;
+    --btnAftWdth: 1.5rem;
+
+    /* ppp */
+    --pppBxWdth: 28rem;
+    --pppImgBxWdth: 22rem;
+
+    /* footer */
+    --ftrCtctBxWdth: 100%;
+    --ftrCtctBxMnWdth: 28rem;
+    --ftrUpsBxWdth: 10rem;
+  }
 }

@@ -63,7 +63,6 @@
   height: 0;
   flex-grow: 1;
   margin-bottom: 1rem;
-
   overflow: auto;
 }
 
@@ -91,6 +90,10 @@
 }
 
 .tbl-hdr-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
   color: var(--clSlvr);
   background-color: var(--clBl);
   padding: 0.5rem;
@@ -109,7 +112,6 @@
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
-
 }
 
 .tbl-hdr-btn.tbl-hdr-btn-srt::after {
@@ -127,7 +129,6 @@
 .tbl-bd-rw:nth-child(even) {
   background-color: var(--clWht);
 }
-
 
 .tbl-bd-itm {
   padding: 0.5rem;
@@ -192,4 +193,93 @@
 
 .tbl-hdr-btn.tbl-hdr-btn-rvrs:active::after {
   background-image: url("./../../icon/mn-icon/upArrSlvr.png");
+}
+
+@media (max-width: 1299px) {
+}
+
+@media (max-width: 999px) {
+  .scr-rst-btn,
+  .scr-rpt-btn {
+    padding: 0.3rem 0.5rem;
+    border-radius: 1.5rem;
+  }
+
+  .tbl-hdr-btn {
+    padding: 0.3rem 0.5rem;
+    border-radius: 1.5rem;
+  }
+}
+
+@media (max-width: 699px) {
+  .scr-rst-btn,
+  .scr-rpt-btn {
+    border-radius: 1rem;
+  }
+
+  .tbl-hdr-itm {
+    padding: 0.5rem;
+  }
+
+  .tbl-hdr-btn {
+    width: var(--btnAftWdth);
+    height: var(--btnAftWdth);
+    padding: 0;
+    border-radius: 0.5rem;
+    margin-left: 0;
+  }
+
+  .tbl-hdr-en-btn::before {
+    font-size: 1.3rem;
+    content: "en";
+  }
+
+  .tbl-hdr-ru-btn::before {
+    font-size: 1.3rem;
+    content: "ru";
+  }
+
+  .tbl-hdr-crct-btn::before {
+    font-size: 2rem;
+    content: "+";
+  }
+
+  .tbl-hdr-err-btn::before {
+    font-size: 2rem;
+    content: "-";
+  }
+  .tbl-hdr-prcnt-btn::before {
+    font-size: 2rem;
+    content: "%";
+  }
+}
+
+@media (max-width: 399px) {
+  .tbl-hdr-btn {
+    border-radius: 0.2rem;
+  }
+
+  .tbl-hdr-en-btn::before {
+    font-size: 1rem;
+    content: "en";
+  }
+
+  .tbl-hdr-ru-btn::before {
+    font-size: 1rem;
+    content: "ru";
+  }
+
+  .tbl-hdr-crct-btn::before {
+    font-size: 1.3rem;
+    content: "+";
+  }
+
+  .tbl-hdr-err-btn::before {
+    font-size: 1.3rem;
+    content: "-";
+  }
+  .tbl-hdr-prcnt-btn::before {
+    font-size: 1.3rem;
+    content: "%";
+  }
 }

@@ -19,7 +19,7 @@
 
 .gm-ans-bx {
   position: absolute;
-  left: 0;
+  left: 1rem;
   padding: 0.5rem 1rem;
   display: flex;
   column-gap: 2rem;
@@ -111,13 +111,22 @@
 }
 
 .gm-cont-bx {
+  height: 0;
   flex-grow: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   column-gap: 2%;
-  row-gap: 3%;
+  row-gap: 2%;
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+
+  overflow: auto;
+}
+
+.gm-cont-bx::-webkit-scrollbar {
+  width: 0;
 }
 
 /* card */
@@ -127,7 +136,6 @@
   height: var(--crdHght);
   border-radius: 2rem;
   box-shadow: 0.2rem 0.2rem 0.5rem var(--clBl);
-
   cursor: pointer;
   transition: scale var(--trnsTmX1) linear, box-shadow var(--trnsTmX1) linear;
 
@@ -147,8 +155,6 @@
   cursor: auto;
   pointer-events: none;
 }
-
-
 
 @keyframes gmCrdRtt {
   0% {
@@ -262,7 +268,7 @@
 
 .gmCrd-rw.gmCrd-rw-gmMd.gmCrd-rw-gmMd-crctAns::after,
 .gmCrd-rw.gmCrd-rw-gmMd.gmCrd-rw-gmMd-errAns::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   z-index: 1;
@@ -274,7 +280,7 @@
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
-  opacity: .3;
+  opacity: 0.3;
   border-radius: 50%;
 }
 
@@ -285,8 +291,6 @@
 .gmCrd-rw.gmCrd-rw-gmMd.gmCrd-rw-gmMd-errAns::after {
   background-image: url("./../../img/mn-img/dflt-img/error.png");
 }
-
-
 
 .gmCrd-img-bx {
   width: 100%;
@@ -426,4 +430,45 @@
   background-color: var(--clBl);
   background-image: url("./../../icon/mn-icon/rptSlvr.png");
   box-shadow: 0.2rem 0.2rem 0.5rem var(--clBl);
+}
+
+@media (max-width: 1299px) {
+  .gm-cont-bx {
+    column-gap: 3%;
+    row-gap: 3%;
+  }
+
+  .gm-hdng-bx.gm-hdng-bx-gmMd {
+    padding: 2rem 1rem;
+  }
+
+  .gm-ans-bx {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 999px) {
+  .gm-ans-bx,
+  .gm-strt-btn,
+  .gm-rpt-btn {
+    padding: 0.3rem 0.5rem;
+    border-radius: 1rem;
+  }
+}
+
+@media (max-width: 699px) {
+  .gm-hdng-bx.gm-hdng-bx-gmMd {
+    padding-top: 0.5rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .gm-ans-bx {
+    top: 3.5rem;
+  }
+}
+
+@media (max-width: 399px) {
+  .gmCrd-rw {
+    padding: 0.3rem;
+  }
 }

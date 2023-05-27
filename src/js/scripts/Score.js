@@ -45,7 +45,7 @@ export default class Score {
     [['en', 'english'], ['ru', 'russian'], ['crct', 'correct'], ['err', 'error'], ['prcnt', 'percent']]
       .forEach((el) => {
         const tblHdrItm = this.action.createElem('th', { class: 'tbl-hdr-itm' });
-        const tblHdrBtn = this.action.createElem('button', { class: 'hdng scr-stl tbl-hdr-btn', type: 'button', id: `${el[0]}Btn` }, el[1]);
+        const tblHdrBtn = this.action.createElem('button', { class: `hdng scr-stl tbl-hdr-btn tbl-hdr-${el[0]}-btn`, type: 'button', id: `${el[0]}Btn` }, el[1]);
         this.action.appEl(tblHdrItm, tblHdrBtn);
         this.action.appEl(tblHdrRw, tblHdrItm);
       });

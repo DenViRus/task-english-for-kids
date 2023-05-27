@@ -92,3 +92,21 @@
 .nv-lst-itm-txt:active {
   font-size: var(--nvLstItmTxtFZ);
 }
+
+@media (max-width: 1299px) {
+  .nv-lst {
+    margin-top: 8rem;
+  }
+}
+
+@media (max-width: 999px) {
+  .nv-lst {
+    margin-top: 6rem;
+  }
+}
+
+@media (max-width: 699px) {
+  .nv-lst {
+    margin-top: 4rem;
+  }
+}

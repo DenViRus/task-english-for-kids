@@ -45,3 +45,5 @@ const controller = new Controller(
   action,
 );
 controller.control();
+
+console.log(window.innerWidth);
