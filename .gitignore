@@ -1,4 +1,7 @@
 dist
+dist/
+.vscode
+.vscode/
 doc
 .idea
 .npmrc
@@ -6,7 +9,7 @@ doc
 Thumbs.db*
 .DS_Store*
 HELP.md
-.vscode
+
 
 
 # Logs

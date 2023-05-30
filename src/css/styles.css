@@ -1,0 +1,12 @@
+@import "./dflt-stls/defaultStyles.css";
+@import "./styles/generalStyle.css";
+@import "./styles/headerStyle.css";
+@import "./styles/burgerStyle.css";
+@import "./styles/navigationStyle.css";
+@import "./styles/modeStyle.css";
+@import "./styles/mainStyle.css";
+@import "./styles/footerStyle.css";
+@import "./styles/mainPageStyle.css";
+@import "./styles/gameStyle.css";
+@import "./styles/popupStyle.css";
+@import "./styles/scoreStyle.css";

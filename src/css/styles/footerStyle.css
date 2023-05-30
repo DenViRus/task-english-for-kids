@@ -1,0 +1,110 @@
+.ftr {
+  width: 100%;
+  background-color: var(--clSeGrn);
+}
+
+.ftr-rw {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ftr-ctct-bx {
+  width: var(--ftrCtctBxWdth);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.ftr-ctct-lnk {
+  font-size: var(--ftrCtctLnkFZ);
+  color: var(--clSlvr);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ftr-ctct-lnk::before {
+  content: "";
+  width: var(--ftrCtctLnkBfrWdth);
+  height: var(--ftrCtctLnkBfrHght);
+  background-size: var(--ftrCtctLnkBfrWdth) var(--ftrCtctLnkBfrHght);
+  margin-right: 0.5rem;
+}
+
+.ftr-ctct-phn-lnk::before {
+  background-image: url(./../../icon/ftr-icon/phoneSilver.png);
+}
+
+.ftr-ctct-tlg-lnk::before {
+  background-image: url(./../../icon/ftr-icon/telegramSilver.png);
+}
+
+.ftr-ctct-ml-lnk::before {
+  background-image: url(./../../icon/ftr-icon/emailSilver.png);
+}
+
+.ftr-ctct-hb-lnk::before {
+  background-image: url(./../../icon/ftr-icon/githubSilver.png);
+}
+
+.ftr-ups-bx {
+  width: var(--ftrUpsBxWdth);
+  min-width: var(--ftrUpsBxMinWdth);
+}
+
+.ftr-ups-lnk {
+  cursor: pointer;
+}
+
+.ftr-ctct-lnk:hover {
+  color: var(--clGld);
+  scale: 1.01;
+}
+
+.ftr-ctct-phn-lnk:hover::before {
+  background-image: url(./../../icon/ftr-icon/phoneGold.png);
+}
+
+.ftr-ctct-tlg-lnk:hover::before {
+  background-image: url(./../../icon/ftr-icon/telegramGold.png);
+}
+
+.ftr-ctct-ml-lnk:hover::before {
+  background-image: url(./../../icon/ftr-icon/emailGold.png);
+}
+
+.ftr-ctct-hb-lnk:hover::before {
+  background-image: url(./../../icon/ftr-icon/githubGold.png);
+}
+
+@media (max-width: 999px) {
+  .ftr-rw {
+    padding: 0.5rem;
+    justify-content: space-around;
+  }
+
+  .ftr-ctct-bx {
+    min-width: var(--ftrCtctBxMnWdth);
+  }
+
+  .ftr-ctct-lnk {
+    width: var(--ftrCtctLnkWdth);
+    min-width: var(--ftrCtctLnkMnWdth);
+  }
+}
+
+@media (max-width: 399px) {
+  .ftr-rw {
+    flex-direction: column;
+  }
+  
+  .ftr-ctct-bx {
+    margin-bottom: 1rem;
+  }
+
+  .ftr-ctct-lnk {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,147 @@
+.md {
+  background-color: var(--clSeGrn);
+  position: absolute;
+  right: 3rem;
+  top: 1rem;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--clBl);
+  z-index: 555;
+  transition: background-color var(--trnsTmX3) linear;
+}
+
+.md.md-gmMd {
+  background-color: var(--clTmt);
+}
+
+.md.md-gmMd.md-gmMd-dsbl {
+  background-color: var(--clLghtGry);
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--clGry);
+  cursor: auto;
+  pointer-events: none;
+}
+
+.md-bx {
+  width: var(--mdBxWdth);
+  height: var(--mdBxHght);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  position: relative;
+}
+
+.md-tgl {
+  width: var(--mdTglWdth);
+  height: var(--mdTglHght);
+  background-color: var(--clBl);
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 2rem;
+  z-index: 2;
+  transition: left var(--trnsTmX3) linear;
+}
+
+.md-tgl.md-tgl-gmMd {
+  left: 11.5rem;
+}
+
+.md-tgl.md-tgl-gmMd.md-tgl-gmMd-dsbl {
+  background-color: var(--clGry);
+}
+
+.md-txt {
+  font-size: var(--mdTxtFZ);
+  color: var(--clSlvr);
+  animation: tgMdTxt var(--trnsTmX3) linear;
+}
+
+.md-txt.md-txt-gmMd {
+  animation: tgMdTxtGmMd var(--trnsTmX3) linear;
+}
+
+.md-txt.md-txt-gmMd.md-txt-gmMd-dsbl {
+  color: var(--clBlck);
+}
+
+@keyframes tgMdTxtGmMd {
+  0% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+@keyframes tgMdTxt {
+  0% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+
+.md:hover {
+  background-color: var(--clGrn);
+  scale: 103%;
+  box-shadow: 0.2rem 0.2rem 1rem var(--clBl);
+}
+
+.md.md-gmMd:hover {
+  background-color: var(--clRd);
+}
+
+.md:hover .md-txt {
+  color: var(--clGld);
+}
+
+.md:hover .md-txt.md-txt-gmMd.md-txt-gmMd-dsbl {
+  color: var(--clBlck);
+}
+
+@media (max-width: 1299px) {
+  .md {
+    top: 0.7rem;
+    right: 2.5rem;
+  }
+
+  .md-tgl.md-tgl-gmMd {
+    left: 9rem;
+  }
+}
+
+@media (max-width: 999px) {
+  .md {
+    top: 0.5rem;
+    right: 2rem;
+    padding: 0.3rem;
+  }
+
+  .md-tgl.md-tgl-gmMd {
+    left: 7.5rem;
+  }
+}
+
+@media (max-width: 699px) {
+  .md {
+    right: 1.5rem;
+  }
+
+  .md-tgl.md-tgl-gmMd {
+    left: 6rem;
+  }
+}
+
+@media (max-width: 399px) {
+  .md {
+    right: 0.5rem;
+  }
+
+  .md-tgl.md-tgl-gmMd {
+    left: 4.5rem;
+  }
+}
