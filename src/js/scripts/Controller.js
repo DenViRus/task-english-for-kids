@@ -46,6 +46,9 @@ export default class Controller {
     if (trgt.closest('.mnPgCrd')) {
       e.preventDefault();
       this.main.replaceMainContent(this.game.getGameEl(this.action.getElByID(this.projectData, trgt.closest('.mnPgCrd').id)), this.mode.modeText.textContent);
+      this.navigation.getItemActive(this.main.mainContent.id);
+      this.burger.toggleBurgerActive();
+      this.navigation.toggleNavigationActive();
     }
 
     if (trgt.closest('.gm-strt-btn')) {

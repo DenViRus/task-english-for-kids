@@ -112,7 +112,7 @@ export default class Game {
       this.togglePause();
       if (this.gameCardsDataRandomArr && this.gameRandomCardData) {
         if (this.gameAnswersCorrectText.textContent > 0 && this.gameAnswersErrorText.textContent > 0) {
-          (this.gameRandomCardData.id === id) ? this.correctAction(dt, this.gameRandomCardData.id) : this.errorAction(dt, this.gameRandomCardData.id);
+          (this.gameRandomCardData.id === id) ? this.correctAction(dt, id) : this.errorAction(dt, id, this.gameRandomCardData.id);
         }
       }
       this.togglePause();
@@ -198,11 +198,11 @@ export default class Game {
     (parseInt(this.gameAnswersCorrectText.textContent, 10) > 0) ? this.playRandomCardAudio(this.gameCardsDataRandomArr) : this.finishGame();
   }
 
-  errorAction(dt, id) {
-    this.action.getElByID(this.gameCardsArr, id).classList.add('gmCrd-errAns');
-    this.action.getElByID(this.gameCardsArr, id).querySelector('.gmCrd-rw').classList.add('gmCrd-rw-gmMd-errAns');
+  errorAction(dt, chooseId, needId) {
+    this.action.getElByID(this.gameCardsArr, chooseId).classList.add('gmCrd-errAns');
+    this.action.getElByID(this.gameCardsArr, chooseId).querySelector('.gmCrd-rw').classList.add('gmCrd-rw-gmMd-errAns');
     this.gameAnswersErrorText.textContent = parseInt(this.gameAnswersErrorText.textContent, 10) - 1;
-    this.score.plusErrorData(id);
+    this.score.plusErrorData(needId);
     this.action.plyAud(dt.errAud);
     if (parseInt(this.gameAnswersErrorText.textContent, 10) === 0) this.finishGame();
   }
